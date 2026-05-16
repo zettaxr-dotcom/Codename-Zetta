@@ -222,14 +222,17 @@ body{
     font-weight:bold;
 }
 
-/* CONTENT */
+/* CONTENT HORIZONTAL */
 
 .content-slider{
     display:flex;
+    flex-direction:row;
     gap:15px;
     overflow-x:auto;
-    padding-bottom:10px;
+    overflow-y:hidden;
     scroll-behavior:smooth;
+    padding-bottom:10px;
+    width:100%;
 }
 
 .content-slider::-webkit-scrollbar{
@@ -237,7 +240,8 @@ body{
 }
 
 .youtube-card{
-    min-width:300px;
+    min-width:320px;
+    max-width:320px;
     background:#262626;
     border-radius:20px;
     overflow:hidden;
@@ -250,6 +254,7 @@ body{
     width:100%;
     height:190px;
     object-fit:cover;
+    display:block;
 }
 
 .youtube-card p{
@@ -282,6 +287,7 @@ footer{
 
     .youtube-card{
         min-width:260px;
+        max-width:260px;
     }
 
     .content-card{
