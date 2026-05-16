@@ -1,254 +1,437 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Codename : Zetta</title>
-
-<link rel="stylesheet" href="./style.css?v=7">
-
-</head>
-
-<body>
-
-<!-- VIDEO BACKGROUND -->
-
-<div class="video-container">
-
-    <video autoplay muted loop playsinline class="bg-video">
-        <source src="background.mp4" type="video/mp4">
-    </video>
-
-</div>
-
-<div class="overlay"></div>
-
-<!-- MAIN -->
-
-<div class="container">
-
-    <!-- PROFILE -->
-
-    <div class="profile-section">
-
-        <img src="profile.png" class="profile-img">
-
-        <h1 class="title">Codename : Zetta</h1>
-
-        <div class="subtitle">
-            The True Dragon
-        </div>
-
-        <div class="description">
-            Mod, Texturepacks, Shader for Java & Bedrock
-        </div>
-
-    </div>
-
-    <!-- SOCIAL -->
-
-    <div class="top-links">
-
-        <a href="https://youtube.com/@zettaxr?si=PUA5OJtLotW2Kcby" class="link-box">
-            <img src="media1.jpg">
-            <span>YouTube</span>
-        </a>
-
-        <a href="https://www.tiktok.com/@zetta.xr?_r=1&_t=ZS-96N0pVPzRXY" class="link-box">
-            <img src="media2.jpg">
-            <span>TikTok</span>
-        </a>
-
-        <a href="https://whatsapp.com/channel/0029Vb7WE39GzzKOH94qKL2l" class="link-box">
-            <img src="media3.jpg">
-            <span>Whatsapp</span>
-        </a>
-
-        <a href="https://x.com/XrZetta38115" class="link-box">
-            <img src="media4.jpg">
-            <span>X</span>
-        </a>
-
-        <a href="https://t.me/+SlZzelxT6CAzZjJl" class="link-box">
-            <img src="media5.jpg">
-            <span>Telegram</span>
-        </a>
-
-    </div>
-
-    <!-- MENU -->
-
-    <div class="menu-buttons">
-
-        <a href="#modpacks">Modpacks</a>
-
-        <a href="#shaderpacks">Shaders</a>
-
-        <a href="#texturepacks">Textures</a>
-
-    </div>
-
-    <!-- POPULAR -->
-
-    <div class="section-title" id="promotion">
-        🔥 Popular
-    </div>
-
-    <div class="slider">
-
-        <a href="https://www.mediafire.com/file/v3c30c8siu92ccu/Derivative_%25E2%2580%2594_Overhoul_%255BRevamp%255D.zip/file" class="slide-card">
-            <img src="promo1.jpg">
-            <p>Derivative — Overhoul Remastered</p>
-        </a>
-
-        <a href="#" class="slide-card">
-            <img src="promo2.jpg">
-            <p>Coming Soon</p>
-        </a>
-
-        <a href="#" class="slide-card">
-            <img src="promo3.jpg">
-            <p>Coming Soon</p>
-        </a>
-
-    </div>
-
-    <!-- CATEGORY -->
-
-    <div class="category-grid">
-
-        <a href="mps.html" class="category-card">
-            <img src="modpack1.jpg">
-            <span>Modpack</span>
-        </a>
-
-        <a href="shader1.html" class="category-card">
-            <img src="shader1.jpg">
-            <span>Shader</span>
-        </a>
-
-        <a href="texture1.html" class="category-card">
-            <img src="texture1.jpg">
-            <span>Texture</span>
-        </a>
-
-    </div>
-
-    <!-- CONTENT -->
-
-    <div class="section-title" id="content">
-        🎥 Content
-    </div>
-
-    <div class="shop-grid">
-
-        <a href="#" class="shop-card">
-            <img src="content1.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="content2.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="content3.jpg">
-        </a>
-
-    </div>
-
-    <button class="show-more-btn" onclick="toggleContent()">
-        Tampilkan Lainnya...
-    </button>
-
-    <div class="shop-grid hidden-content" id="moreContent">
-
-        <a href="#" class="shop-card">
-            <img src="content4.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="content5.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="content6.jpg">
-        </a>
-
-    </div>
-
-    <!-- SHOP -->
-
-    <div class="section-title">
-        🏛️ Shop
-    </div>
-
-    <div class="shop-grid">
-
-        <a href="#" class="shop-card">
-            <img src="shop1.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop2.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop3.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop4.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop5.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop6.jpg">
-        </a>
-
-    </div>
-
-</div>
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="wave"></div>
-
-    <img src="profile.png" class="footer-logo">
-
-    <div class="footer-text">
-        Codename : Zetta Website Minecraft Modpack, Shader, Texturepack Java & Bedrock.
-    </div>
-
-</footer>
-
-<!-- SCRIPT -->
-
-<script>
-
-function toggleContent(){
-
-    const moreContent = document.getElementById("moreContent");
-
-    if(moreContent.style.display === "grid"){
-
-        moreContent.style.display = "none";
-
-    }else{
-
-        moreContent.style.display = "grid";
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* BACKGROUND */
+
+.video-container{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    overflow:hidden;
+}
+
+.bg-video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:blur(8px) brightness(0.28);
+    transform:scale(1.1);
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:-9;
+}
+
+/* CONTAINER */
+
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0 100px;
+    position:relative;
+    z-index:2;
+}
+
+/* PROFILE */
+
+.profile-section{
+    text-align:center;
+    padding-top:20px;
+}
+
+.profile-img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid rgba(255,255,255,0.15);
+    box-shadow:0 0 30px rgba(255,255,255,0.1);
+}
+
+.title{
+    font-size:58px;
+    font-weight:800;
+    margin-top:20px;
+}
+
+.subtitle{
+    color:#ff3b3b;
+    margin-top:10px;
+    font-weight:700;
+    font-size:24px;
+}
+
+.description{
+    color:#ccc;
+    margin-top:15px;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* SOCIAL */
+
+.top-links{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.link-box{
+    text-decoration:none;
+    color:white;
+    text-align:center;
+    transition:.3s;
+}
+
+.link-box img{
+    width:90px;
+    height:90px;
+    border-radius:24px;
+    object-fit:cover;
+    transition:.3s;
+}
+
+.link-box:hover{
+    transform:translateY(-5px);
+}
+
+.link-box span{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* MENU */
+
+.menu-buttons{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:45px;
+    flex-wrap:wrap;
+}
+
+.menu-buttons a{
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:14px 24px;
+    border-radius:16px;
+    font-weight:700;
+    transition:.3s;
+    backdrop-filter:blur(10px);
+}
+
+.menu-buttons a:hover{
+    background:#ff3b3b;
+    transform:translateY(-4px);
+}
+
+/* SECTION */
+
+.section-title{
+    margin-top:70px;
+    margin-bottom:22px;
+    font-size:34px;
+    font-weight:800;
+}
+
+/* POPULAR */
+
+.slider{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    padding-bottom:10px;
+    scroll-snap-type:x mandatory;
+}
+
+.slider::-webkit-scrollbar{
+    display:none;
+}
+
+.slide-card{
+    min-width:340px;
+    border-radius:26px;
+    overflow:hidden;
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    flex-shrink:0;
+    scroll-snap-align:start;
+    transition:.3s;
+}
+
+.slide-card:hover{
+    transform:translateY(-5px);
+}
+
+.slide-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    display:block;
+}
+
+.slide-card p{
+    padding:16px;
+    font-weight:700;
+}
+
+/* CATEGORY */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:25px;
+}
+
+.category-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    text-decoration:none;
+}
+
+.category-card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    transition:.4s;
+    display:block;
+}
+
+.category-card:hover img{
+    transform:scale(1.05);
+}
+
+.category-card span{
+    position:absolute;
+    bottom:12px;
+    left:12px;
+    font-size:22px;
+    font-weight:800;
+    color:white;
+    text-shadow:0 0 10px rgba(0,0,0,0.6);
+}
+
+/* SHOP GRID */
+
+.shop-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:15px;
+}
+
+.shop-card{
+    overflow:hidden;
+    border-radius:22px;
+    transition:.3s;
+}
+
+.shop-card:hover{
+    transform:translateY(-5px);
+}
+
+.shop-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
+
+.shop-card:hover img{
+    transform:scale(1.05);
+}
+
+/* SHOW MORE */
+
+.show-more-btn{
+    width:100%;
+    margin-top:22px;
+    padding:16px;
+    border:none;
+    border-radius:18px;
+    background:rgba(255,255,255,0.08);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.show-more-btn:hover{
+    background:#ff3b3b;
+}
+
+/* HIDDEN CONTENT */
+
+.hidden-content{
+    display:none;
+    margin-top:15px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:120px;
+    background:#2f2f2f;
+    position:relative;
+    padding:110px 30px 60px;
+    text-align:left;
+    overflow:hidden;
+}
+
+.wave{
+    position:absolute;
+    top:-60px;
+    left:0;
+    width:100%;
+    height:120px;
+    background:#000;
+    border-radius:0 0 50% 50%;
+}
+
+.footer-logo{
+    width:75px;
+    border-radius:18px;
+    margin-bottom:20px;
+    position:relative;
+    z-index:2;
+}
+
+.footer-text{
+    color:#ddd;
+    line-height:2;
+    max-width:700px;
+    position:relative;
+    z-index:2;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#444;
+    border-radius:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .title{
+        font-size:32px;
+    }
+
+    .subtitle{
+        font-size:18px;
+    }
+
+    .description{
+        font-size:14px;
+    }
+
+    .section-title{
+        font-size:26px;
+    }
+
+    .top-links{
+        justify-content:flex-start;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:10px;
+    }
+
+    .top-links::-webkit-scrollbar{
+        display:none;
+    }
+
+    .link-box{
+        min-width:90px;
+    }
+
+    .menu-buttons{
+        justify-content:flex-start;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:10px;
+    }
+
+    .menu-buttons::-webkit-scrollbar{
+        display:none;
+    }
+
+    .slide-card{
+        min-width:290px;
+    }
+
+    .slide-card img{
+        height:180px;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+    }
+
+    .category-card img{
+        height:120px;
+    }
+
+    .category-card span{
+        font-size:13px;
+        left:8px;
+        bottom:8px;
+    }
+
+    .shop-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+    }
+
+    .shop-card img{
+        height:120px;
+    }
+
+    footer{
+        padding:90px 20px 50px;
     }
 
 }
-
-</script>
-
-</body>
-</html>
