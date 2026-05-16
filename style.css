@@ -14,10 +14,37 @@
 }
 
 body{
-    background:
-    radial-gradient(circle at top left,#2a2a2a,#111111 60%);
+    background:#000;
     color:white;
     overflow-x:hidden;
+    position:relative;
+}
+
+/* =========================
+   VIDEO BACKGROUND
+========================= */
+
+.video-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-3;
+    filter:blur(8px) brightness(0.35);
+    transform:scale(1.1);
+}
+
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    z-index:-2;
+    backdrop-filter:blur(2px);
 }
 
 /* SCROLLBAR */
@@ -47,6 +74,8 @@ body{
     max-width:950px;
     margin:auto;
     padding:30px 0 80px;
+    position:relative;
+    z-index:2;
 }
 
 /* =========================
@@ -132,6 +161,7 @@ body{
     border:1px solid rgba(255,255,255,0.08);
     padding:3px;
     transition:0.4s;
+    backdrop-filter:blur(10px);
 }
 
 .link-box:hover img{
@@ -239,6 +269,7 @@ body{
     flex-shrink:0;
     border:1px solid rgba(255,255,255,0.08);
     transition:0.4s;
+    backdrop-filter:blur(10px);
 }
 
 .slide-card:hover{
@@ -287,6 +318,7 @@ body{
     flex-shrink:0;
     border:1px solid rgba(255,255,255,0.08);
     transition:0.4s;
+    backdrop-filter:blur(10px);
 }
 
 .content-card:hover{
@@ -329,6 +361,7 @@ body{
     color:white;
     border:1px solid rgba(255,255,255,0.08);
     transition:0.4s;
+    backdrop-filter:blur(10px);
 }
 
 .youtube-card:hover{
@@ -370,6 +403,7 @@ body{
     color:white;
     border:1px solid rgba(255,255,255,0.08);
     transition:0.4s;
+    backdrop-filter:blur(10px);
 }
 
 .shop-card:hover{
@@ -407,6 +441,8 @@ footer{
     font-size:20px;
     font-weight:800;
     letter-spacing:1px;
+    position:relative;
+    z-index:2;
 }
 
 /* =========================
