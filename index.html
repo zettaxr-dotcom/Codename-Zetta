@@ -8,300 +8,6 @@
 
 <link rel="stylesheet" href="style.css">
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#1b1b1b;
-    color:white;
-    overflow-x:hidden;
-}
-
-.container{
-    width:92%;
-    max-width:900px;
-    margin:auto;
-    padding:30px 0;
-}
-
-/* PROFILE */
-
-.profile-section{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.profile-img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid rgba(255,255,255,0.2);
-}
-
-.title{
-    margin-top:15px;
-    font-size:32px;
-    font-weight:bold;
-}
-
-.subtitle{
-    margin-top:8px;
-    color:red;
-    font-size:18px;
-    font-weight:bold;
-}
-
-.description{
-    margin-top:12px;
-    color:#cfcfcf;
-    font-size:14px;
-    line-height:1.6;
-}
-
-/* TOP LINKS */
-
-.top-links{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-    padding-bottom:10px;
-    margin-top:30px;
-    scroll-behavior:smooth;
-}
-
-.top-links::-webkit-scrollbar{
-    display:none;
-}
-
-.link-box{
-    min-width:95px;
-    text-decoration:none;
-    color:white;
-    flex-shrink:0;
-    text-align:center;
-}
-
-.link-box img{
-    width:95px;
-    height:95px;
-    object-fit:cover;
-    border-radius:20px;
-    background:#2a2a2a;
-    transition:0.3s;
-}
-
-.link-box:hover img{
-    transform:translateY(-5px);
-}
-
-.link-box span{
-    display:block;
-    margin-top:8px;
-    font-size:13px;
-    font-weight:bold;
-}
-
-/* MENU BUTTONS */
-
-.menu-buttons{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-    margin-top:40px;
-    padding-bottom:10px;
-    scroll-behavior:smooth;
-}
-
-.menu-buttons::-webkit-scrollbar{
-    display:none;
-}
-
-.menu-buttons a{
-    min-width:170px;
-    height:85px;
-    border-radius:18px;
-    overflow:hidden;
-    flex-shrink:0;
-}
-
-.menu-buttons img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.3s;
-}
-
-.menu-buttons a:hover img{
-    transform:scale(1.04);
-}
-
-/* TITLE */
-
-.section-title{
-    margin-top:50px;
-    margin-bottom:18px;
-    font-size:26px;
-    font-weight:bold;
-}
-
-/* PROMOTION */
-
-.slider{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-    padding-bottom:10px;
-}
-
-.slider::-webkit-scrollbar{
-    display:none;
-}
-
-.slide-card{
-    min-width:270px;
-    background:#262626;
-    border-radius:20px;
-    overflow:hidden;
-    text-decoration:none;
-    color:white;
-    flex-shrink:0;
-}
-
-.slide-card img{
-    width:100%;
-    height:160px;
-    object-fit:cover;
-}
-
-.slide-card p{
-    padding:12px;
-    font-weight:bold;
-}
-
-/* MODPACK SHADER TEXTURE */
-
-.card-grid{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-    padding-bottom:10px;
-    scroll-behavior:smooth;
-}
-
-.card-grid::-webkit-scrollbar{
-    display:none;
-}
-
-.content-card{
-    min-width:220px;
-    background:#262626;
-    border-radius:20px;
-    overflow:hidden;
-    text-decoration:none;
-    color:white;
-    flex-shrink:0;
-}
-
-.content-card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-
-.content-card p{
-    padding:12px;
-    text-align:center;
-    font-weight:bold;
-}
-
-/* CONTENT HORIZONTAL */
-
-.content-slider{
-    display:flex;
-    flex-direction:row;
-    gap:15px;
-    overflow-x:auto;
-    overflow-y:hidden;
-    scroll-behavior:smooth;
-    padding-bottom:10px;
-    width:100%;
-}
-
-.content-slider::-webkit-scrollbar{
-    display:none;
-}
-
-.youtube-card{
-    min-width:320px;
-    max-width:320px;
-    background:#262626;
-    border-radius:20px;
-    overflow:hidden;
-    text-decoration:none;
-    color:white;
-    flex-shrink:0;
-}
-
-.youtube-card img{
-    width:100%;
-    height:190px;
-    object-fit:cover;
-    display:block;
-}
-
-.youtube-card p{
-    padding:14px;
-    font-weight:bold;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top:60px;
-    text-align:center;
-    padding:25px;
-    background:#151515;
-    font-size:20px;
-    font-weight:bold;
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    .title{
-        font-size:28px;
-    }
-
-    .slide-card{
-        min-width:240px;
-    }
-
-    .youtube-card{
-        min-width:260px;
-        max-width:260px;
-    }
-
-    .content-card{
-        min-width:190px;
-    }
-
-    .menu-buttons a{
-        min-width:150px;
-    }
-
-}
-
-</style>
-
 </head>
 
 <body>
@@ -510,6 +216,46 @@ footer{
 
         <a href="https://youtube.com" class="youtube-card">
             <img src="content5.jpg">
+            <p>None</p>
+        </a>
+
+    </div>
+
+    <!-- SHOP -->
+
+    <div class="section-title" id="shop">
+        Shop
+    </div>
+
+    <div class="shop-grid">
+
+        <a href="https://google.com" class="shop-card">
+            <img src="shop1.jpg">
+            <p>None</p>
+        </a>
+
+        <a href="https://google.com" class="shop-card">
+            <img src="shop2.jpg">
+            <p>None</p>
+        </a>
+
+        <a href="https://google.com" class="shop-card">
+            <img src="shop3.jpg">
+            <p>None</p>
+        </a>
+
+        <a href="https://google.com" class="shop-card">
+            <img src="shop4.jpg">
+            <p>None</p>
+        </a>
+
+        <a href="https://google.com" class="shop-card">
+            <img src="shop5.jpg">
+            <p>None</p>
+        </a>
+
+        <a href="https://google.com" class="shop-card">
+            <img src="shop6.jpg">
             <p>None</p>
         </a>
 
