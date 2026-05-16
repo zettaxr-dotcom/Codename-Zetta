@@ -1,203 +1,13 @@
 /* =========================
-   CODE NAME : ZETTA
-   STYLE.CSS
-========================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#000;
-    color:white;
-    overflow-x:hidden;
-    min-height:100vh;
-}
-
-/* =========================
-   VIDEO BACKGROUND FIX
-========================= */
-
-.video-container{
-    position:fixed;
-    inset:0;
-    width:100%;
-    height:100vh;
-    overflow:hidden;
-    z-index:-10;
-}
-
-.bg-video{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    /* FIX ZOOM BUG */
-    transform:none;
-
-    /* AESTHETIC BLUR */
-    filter:blur(8px) brightness(0.35);
-}
-
-/* DARK OVERLAY */
-
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.45);
-    z-index:-9;
-}
-
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-    width:8px;
-    height:6px;
-}
-
-::-webkit-scrollbar-track{
-    background:#111;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#444;
-    border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:#666;
-}
-
-/* CONTAINER */
-
-.container{
-    width:90%;
-    max-width:950px;
-    margin:auto;
-    padding:30px 0 80px;
-    position:relative;
-    z-index:2;
-}
-
-/* =========================
-   PROFILE
-========================= */
-
-.profile-section{
-    text-align:center;
-    animation:fadeDown 1s ease;
-}
-
-.profile-img{
-    width:130px;
-    height:130px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid rgba(255,255,255,0.2);
-    box-shadow:
-    0 0 20px rgba(255,255,255,0.1),
-    0 0 40px rgba(255,255,255,0.08);
-    transition:0.4s;
-    animation:floating 4s ease-in-out infinite;
-}
-
-.profile-img:hover{
-    transform:scale(1.06);
-}
-
-.title{
-    margin-top:18px;
-    font-size:35px;
-    font-weight:800;
-    letter-spacing:1px;
-}
-
-.subtitle{
-    margin-top:10px;
-    color:#ff3b3b;
-    font-size:18px;
-    font-weight:700;
-    text-shadow:0 0 12px rgba(255,0,0,0.5);
-}
-
-.description{
-    margin-top:14px;
-    color:#cfcfcf;
-    font-size:15px;
-    line-height:1.8;
-}
-
-/* =========================
-   TOP LINKS
-========================= */
-
-.top-links{
-    margin-top:40px;
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-    padding-bottom:10px;
-    scroll-behavior:smooth;
-}
-
-.top-links::-webkit-scrollbar{
-    display:none;
-}
-
-.link-box{
-    min-width:95px;
-    flex-shrink:0;
-    text-decoration:none;
-    color:white;
-    text-align:center;
-    transition:0.4s;
-}
-
-.link-box img{
-    width:95px;
-    height:95px;
-    object-fit:cover;
-    border-radius:22px;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:3px;
-    transition:0.4s;
-    backdrop-filter:blur(10px);
-}
-
-.link-box:hover img{
-    transform:translateY(-6px);
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.4);
-}
-
-.link-box span{
-    display:block;
-    margin-top:8px;
-    font-size:13px;
-    font-weight:600;
-}
-
-/* =========================
-   MENU BUTTONS
+   MENU BUTTONS STYLE BARU
 ========================= */
 
 .menu-buttons{
-    margin-top:45px;
+    margin-top:40px;
     display:flex;
-    gap:15px;
+    gap:12px;
     overflow-x:auto;
     padding-bottom:10px;
-    scroll-behavior:smooth;
 }
 
 .menu-buttons::-webkit-scrollbar{
@@ -205,28 +15,22 @@ body{
 }
 
 .menu-buttons a{
-    min-width:180px;
-    height:90px;
-    border-radius:22px;
-    overflow:hidden;
-    flex-shrink:0;
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,0.08);
     border:1px solid rgba(255,255,255,0.08);
-    transition:0.4s;
+    padding:14px 24px;
+    border-radius:14px;
+    font-size:15px;
+    font-weight:700;
+    white-space:nowrap;
+    transition:.25s ease;
+    backdrop-filter:blur(12px);
 }
 
 .menu-buttons a:hover{
-    transform:translateY(-6px);
-}
-
-.menu-buttons img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.5s;
-}
-
-.menu-buttons a:hover img{
-    transform:scale(1.06);
+    background:#ff3b3b;
+    transform:translateY(-2px);
 }
 
 /* =========================
@@ -234,35 +38,35 @@ body{
 ========================= */
 
 .section-title{
-    margin-top:60px;
-    margin-bottom:20px;
-    font-size:28px;
+    margin-top:55px;
+    margin-bottom:22px;
+    font-size:30px;
     font-weight:800;
-    letter-spacing:1px;
     position:relative;
 }
 
 .section-title::after{
     content:'';
-    width:80px;
+    width:70px;
     height:4px;
+    border-radius:20px;
     background:#ff3b3b;
     position:absolute;
     left:0;
     bottom:-8px;
-    border-radius:20px;
 }
 
 /* =========================
-   PROMOTION
+   PROMOTION SLIDER
 ========================= */
 
 .slider{
     display:flex;
     gap:18px;
     overflow-x:auto;
-    padding-bottom:10px;
+    scroll-snap-type:x mandatory;
     scroll-behavior:smooth;
+    padding-bottom:10px;
 }
 
 .slider::-webkit-scrollbar{
@@ -270,223 +74,221 @@ body{
 }
 
 .slide-card{
-    min-width:320px;
-    background:rgba(255,255,255,0.05);
-    border-radius:24px;
+    min-width:100%;
+    scroll-snap-align:center;
+    border-radius:28px;
     overflow:hidden;
-    text-decoration:none;
-    color:white;
+    position:relative;
     flex-shrink:0;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.4s;
-    backdrop-filter:blur(10px);
+    transition:.3s ease;
 }
 
 .slide-card:hover{
-    transform:translateY(-6px);
+    transform:scale(.98);
 }
 
 .slide-card img{
     width:100%;
-    height:190px;
+    height:220px;
     object-fit:cover;
-    transition:0.5s;
-}
-
-.slide-card:hover img{
-    transform:scale(1.05);
+    display:block;
 }
 
 .slide-card p{
-    padding:16px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:18px;
+    font-size:18px;
     font-weight:700;
+    background:linear-gradient(to top, rgba(0,0,0,.85), transparent);
 }
 
 /* =========================
-   MODPACK / SHADER / TEXTURE
+   SHOP CATEGORY BUTTON
 ========================= */
 
-.card-grid{
+.shop-tabs{
     display:flex;
-    gap:18px;
+    gap:12px;
     overflow-x:auto;
-    padding-bottom:10px;
-    scroll-behavior:smooth;
+    margin-top:25px;
+    padding-bottom:8px;
 }
 
-.card-grid::-webkit-scrollbar{
+.shop-tabs::-webkit-scrollbar{
     display:none;
 }
 
-.content-card{
-    min-width:230px;
-    background:rgba(255,255,255,0.05);
-    border-radius:24px;
-    overflow:hidden;
-    text-decoration:none;
+.shop-tabs button{
+    border:none;
+    background:#2c2c2c;
     color:white;
-    flex-shrink:0;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.4s;
-    backdrop-filter:blur(10px);
-}
-
-.content-card:hover{
-    transform:translateY(-6px);
-}
-
-.content-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    transition:0.5s;
-}
-
-.content-card:hover img{
-    transform:scale(1.05);
-}
-
-.content-card p{
-    padding:15px;
-    text-align:center;
+    padding:14px 22px;
+    border-radius:12px;
+    font-size:15px;
     font-weight:700;
+    white-space:nowrap;
+    transition:.25s;
+}
+
+.shop-tabs button.active{
+    background:#ff3b3b;
+}
+
+.shop-tabs button:hover{
+    transform:translateY(-2px);
 }
 
 /* =========================
-   CONTENT VERTICAL
-========================= */
-
-.content-slider{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.youtube-card{
-    width:100%;
-    background:rgba(255,255,255,0.05);
-    border-radius:24px;
-    overflow:hidden;
-    text-decoration:none;
-    color:white;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.4s;
-    backdrop-filter:blur(10px);
-}
-
-.youtube-card:hover{
-    transform:translateY(-6px);
-}
-
-.youtube-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    transition:0.5s;
-}
-
-.youtube-card:hover img{
-    transform:scale(1.04);
-}
-
-.youtube-card p{
-    padding:16px;
-    font-weight:700;
-}
-
-/* =========================
-   SHOP SECTION
+   SHOP GRID STYLE BARU
 ========================= */
 
 .shop-grid{
+    margin-top:28px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
-    margin-top:10px;
+    gap:16px;
 }
 
 .shop-card{
-    background:rgba(255,255,255,0.05);
-    border-radius:22px;
+    position:relative;
     overflow:hidden;
+    border-radius:24px;
     text-decoration:none;
     color:white;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.4s;
-    backdrop-filter:blur(10px);
+    transition:.3s ease;
+    background:#111;
 }
 
 .shop-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 }
 
 .shop-card img{
     width:100%;
-    height:180px;
+    aspect-ratio:1/1;
     object-fit:cover;
-    transition:0.5s;
-}
-
-.shop-card:hover img{
-    transform:scale(1.05);
+    display:block;
 }
 
 .shop-card p{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
     padding:12px;
-    text-align:center;
+    font-size:14px;
     font-weight:700;
+    background:linear-gradient(to top, rgba(0,0,0,.9), transparent);
 }
 
 /* =========================
-   FOOTER
+   SHOW MORE BUTTON
+========================= */
+
+.show-more{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+}
+
+.show-more button{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.2);
+    color:white;
+    padding:15px 40px;
+    border-radius:14px;
+    font-size:16px;
+    transition:.25s;
+}
+
+.show-more button:hover{
+    background:#ff3b3b;
+    border-color:#ff3b3b;
+}
+
+/* =========================
+   WAVE FOOTER
+========================= */
+
+.wave{
+    margin-top:80px;
+    position:relative;
+    height:120px;
+    overflow:hidden;
+}
+
+.wave::before{
+    content:'';
+    position:absolute;
+    width:200%;
+    height:100%;
+    background:
+    radial-gradient(circle at 25% 0%, transparent 35%, #3a3a3a 36%),
+    radial-gradient(circle at 75% 0%, transparent 35%, #3a3a3a 36%);
+    background-size:120px 100px;
+    background-position:0 0;
+}
+
+/* =========================
+   FOOTER STYLE BARU
 ========================= */
 
 footer{
-    margin-top:80px;
-    background:rgba(255,255,255,0.04);
-    border-top:1px solid rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    text-align:center;
-    padding:28px;
-    font-size:20px;
-    font-weight:800;
-    letter-spacing:1px;
+    background:#3a3a3a;
+    padding:60px 25px;
     position:relative;
     z-index:2;
 }
 
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes fadeDown{
-
-    from{
-        opacity:0;
-        transform:translateY(-40px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
+.footer-logo{
+    width:70px;
+    border-radius:14px;
+    margin-bottom:25px;
 }
 
-@keyframes floating{
+.footer-text{
+    color:#e2e2e2;
+    font-size:17px;
+    line-height:2;
+    margin-bottom:30px;
+}
 
-    0%{
-        transform:translateY(0px);
-    }
+.footer-social{
+    display:flex;
+    gap:18px;
+    margin-bottom:40px;
+}
 
-    50%{
-        transform:translateY(-8px);
-    }
+.footer-social img{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    transition:.25s;
+}
 
-    100%{
-        transform:translateY(0px);
-    }
+.footer-social img:hover{
+    transform:translateY(-3px);
+}
 
+.footer-links{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.footer-links h3{
+    margin-bottom:14px;
+    font-size:22px;
+}
+
+.footer-links a{
+    display:block;
+    margin-bottom:10px;
+    color:#e2e2e2;
+    text-decoration:none;
 }
 
 /* =========================
@@ -503,37 +305,23 @@ footer{
         font-size:16px;
     }
 
-    .slide-card{
-        min-width:260px;
-    }
-
-    .content-card{
-        min-width:190px;
-    }
-
-    .menu-buttons a{
-        min-width:150px;
-    }
-
-    .link-box{
-        min-width:85px;
-    }
-
-    .link-box img{
-        width:85px;
-        height:85px;
-    }
-
-    .youtube-card img{
+    .slide-card img{
         height:190px;
     }
 
     .shop-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(3,1fr);
+        gap:12px;
     }
 
-    .shop-card img{
-        height:150px;
+    .shop-card p{
+        font-size:11px;
+        padding:8px;
+    }
+
+    .footer-text{
+        font-size:15px;
+        line-height:1.8;
     }
 
 }
