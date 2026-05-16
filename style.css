@@ -21,20 +21,31 @@ body{
 }
 
 /* =========================
-   VIDEO BACKGROUND
+   VIDEO BACKGROUND FIX
 ========================= */
 
-.video-bg{
+.video-container{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    object-fit:cover;
+    overflow:hidden;
     z-index:-3;
-    filter:blur(8px) brightness(0.35);
-    transform:scale(1.1);
 }
+
+.bg-video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:translate(-50%,-50%) scale(1.15);
+    filter:blur(10px) brightness(0.35);
+}
+
+/* DARK OVERLAY */
 
 .overlay{
     position:fixed;
@@ -42,7 +53,7 @@ body{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.35);
+    background:rgba(0,0,0,0.45);
     z-index:-2;
     backdrop-filter:blur(2px);
 }
