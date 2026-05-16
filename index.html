@@ -7,18 +7,20 @@
 
 <title>Codename : Zetta</title>
 
-<link rel="stylesheet" href="./style.css?v=5">
+<link rel="stylesheet" href="./style.css?v=7">
 
 </head>
 
 <body>
 
-<!-- VIDEO BG -->
+<!-- VIDEO BACKGROUND -->
 
 <div class="video-container">
+
     <video autoplay muted loop playsinline class="bg-video">
         <source src="background.mp4" type="video/mp4">
     </video>
+
 </div>
 
 <div class="overlay"></div>
@@ -33,9 +35,7 @@
 
         <img src="profile.png" class="profile-img">
 
-        <div class="title">
-            Codename : Zetta
-        </div>
+        <h1 class="title">Codename : Zetta</h1>
 
         <div class="subtitle">
             The True Dragon
@@ -88,10 +88,6 @@
 
         <a href="#texturepacks">Textures</a>
 
-        <a href="#promotion">Popular</a>
-
-        <a href="#content">Content</a>
-
     </div>
 
     <!-- POPULAR -->
@@ -119,98 +115,23 @@
 
     </div>
 
-    <!-- MODPACK -->
+    <!-- CATEGORY -->
 
-    <div class="section-title" id="modpacks">
-        🌎 Modpacks
-    </div>
+    <div class="category-grid">
 
-    <div class="card-grid">
-
-        <a href="mps.html" class="content-card">
+        <a href="mps.html" class="category-card">
             <img src="modpack1.jpg">
-            <p>MPS Survival</p>
+            <span>Modpack</span>
         </a>
 
-        <a href="hardcore.html" class="content-card">
-            <img src="modpack2.jpg">
-            <p>Experiment</p>
-        </a>
-
-        <a href="#" class="content-card">
-            <img src="modpack3.jpg">
-            <p>Coming Soon</p>
-        </a>
-
-        <a href="#" class="content-card">
-            <img src="modpack4.jpg">
-            <p>Coming Soon</p>
-        </a>
-
-        <a href="#" class="content-card">
-            <img src="modpack5.jpg">
-            <p>Coming Soon</p>
-        </a>
-
-        <a href="#" class="content-card">
-            <img src="modpack6.jpg">
-            <p>Coming Soon</p>
-        </a>
-
-    </div>
-
-    <!-- SHOW MORE -->
-
-    <div class="show-more">
-        <button>Tampilkan Lainnya...</button>
-    </div>
-
-    <!-- SHADER -->
-
-    <div class="section-title" id="shaderpacks">
-        🌌 Shaderpacks
-    </div>
-
-    <div class="card-grid">
-
-        <a href="shader1.html" class="content-card">
+        <a href="shader1.html" class="category-card">
             <img src="shader1.jpg">
-            <p>Performance</p>
+            <span>Shader</span>
         </a>
 
-        <a href="shader2.html" class="content-card">
-            <img src="shader2.jpg">
-            <p>Quality</p>
-        </a>
-
-        <a href="#" class="content-card">
-            <img src="shader3.jpg">
-            <p>Coming Soon</p>
-        </a>
-
-    </div>
-
-    <!-- TEXTURE -->
-
-    <div class="section-title" id="texturepacks">
-        🎨 Texturepacks
-    </div>
-
-    <div class="card-grid">
-
-        <a href="texture1.html" class="content-card">
+        <a href="texture1.html" class="category-card">
             <img src="texture1.jpg">
-            <p>PBR</p>
-        </a>
-
-        <a href="texture2.html" class="content-card">
-            <img src="texture2.jpg">
-            <p>Non PBR</p>
-        </a>
-
-        <a href="#" class="content-card">
-            <img src="texture3.jpg">
-            <p>Coming Soon</p>
+            <span>Texture</span>
         </a>
 
     </div>
@@ -221,16 +142,72 @@
         🎥 Content
     </div>
 
-    <div class="content-slider">
+    <div class="shop-grid">
 
-        <a href="#" class="youtube-card">
+        <a href="#" class="shop-card">
             <img src="content1.jpg">
-            <p>Coming Soon</p>
         </a>
 
-        <a href="#" class="youtube-card">
+        <a href="#" class="shop-card">
             <img src="content2.jpg">
-            <p>Coming Soon</p>
+        </a>
+
+        <a href="#" class="shop-card">
+            <img src="content3.jpg">
+        </a>
+
+    </div>
+
+    <button class="show-more-btn" onclick="toggleContent()">
+        Tampilkan Lainnya...
+    </button>
+
+    <div class="shop-grid hidden-content" id="moreContent">
+
+        <a href="#" class="shop-card">
+            <img src="content4.jpg">
+        </a>
+
+        <a href="#" class="shop-card">
+            <img src="content5.jpg">
+        </a>
+
+        <a href="#" class="shop-card">
+            <img src="content6.jpg">
+        </a>
+
+    </div>
+
+    <!-- SHOP -->
+
+    <div class="section-title">
+        🏛️ Shop
+    </div>
+
+    <div class="shop-grid">
+
+        <a href="#" class="shop-card">
+            <img src="shop1.jpg">
+        </a>
+
+        <a href="#" class="shop-card">
+            <img src="shop2.jpg">
+        </a>
+
+        <a href="#" class="shop-card">
+            <img src="shop3.jpg">
+        </a>
+
+        <a href="#" class="shop-card">
+            <img src="shop4.jpg">
+        </a>
+
+        <a href="#" class="shop-card">
+            <img src="shop5.jpg">
+        </a>
+
+        <a href="#" class="shop-card">
+            <img src="shop6.jpg">
         </a>
 
     </div>
@@ -241,6 +218,8 @@
 
 <footer>
 
+    <div class="wave"></div>
+
     <img src="profile.png" class="footer-logo">
 
     <div class="footer-text">
@@ -249,7 +228,27 @@
 
 </footer>
 
-<script src="script.js"></script>
+<!-- SCRIPT -->
+
+<script>
+
+function toggleContent(){
+
+    const moreContent = document.getElementById("moreContent");
+
+    if(moreContent.style.display === "grid"){
+
+        moreContent.style.display = "none";
+
+    }else{
+
+        moreContent.style.display = "grid";
+
+    }
+
+}
+
+</script>
 
 </body>
 </html>
