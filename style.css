@@ -41,7 +41,7 @@ body{
     background:linear-gradient(
         to bottom,
         rgba(0,0,0,.35),
-        rgba(0,0,0,.60)
+        rgba(0,0,0,.65)
     );
     z-index:-9;
 }
@@ -57,9 +57,9 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    backdrop-filter:blur(14px);
-    background:rgba(0,0,0,.30);
-    border-bottom:1px solid rgba(255,255,255,.05);
+    backdrop-filter:blur(16px);
+    background:rgba(0,0,0,.35);
+    border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .nav-logo img{
@@ -70,6 +70,33 @@ body{
     display:flex;
     align-items:center;
     gap:12px;
+}
+
+/* SEARCH TOP */
+
+.top-search{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:40%;
+    max-width:450px;
+}
+
+.top-search input{
+    width:100%;
+    height:52px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.10);
+    padding:0 20px;
+    color:white;
+    backdrop-filter:blur(10px);
+}
+
+.top-search input::placeholder{
+    color:#d0d0d0;
 }
 
 .nav-btn{
@@ -83,6 +110,7 @@ body{
     font-size:20px;
     backdrop-filter:blur(10px);
     transition:.3s;
+    cursor:pointer;
 }
 
 .nav-btn:hover{
@@ -105,7 +133,7 @@ body{
 .hero-section{
     text-align:center;
     padding-top:45px;
-    padding-bottom:110px;
+    padding-bottom:90px;
 }
 
 .profile-img{
@@ -175,6 +203,67 @@ body{
     object-fit:cover;
 }
 
+/* POPULER */
+
+.popular-section{
+    margin-top:35px;
+}
+
+.popular-title{
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:18px;
+    color:#fff;
+}
+
+.popular-scroll{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    padding-bottom:10px;
+}
+
+.popular-scroll::-webkit-scrollbar{
+    display:none;
+}
+
+.popular-card{
+    min-width:230px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    overflow:hidden;
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+    backdrop-filter:blur(10px);
+}
+
+.popular-card:hover{
+    transform:translateY(-5px);
+}
+
+.popular-card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+}
+
+.popular-info{
+    padding:15px;
+}
+
+.popular-info h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.popular-info p{
+    font-size:12px;
+    color:#cfcfcf;
+    line-height:1.6;
+}
+
 /* TOP WAVE */
 
 .top-wave{
@@ -182,7 +271,7 @@ body{
     height:140px;
     background:#2d2d2d;
     margin-top:-40px;
-    border-radius:50% 50% 0 0;
+    border-radius:0 0 50% 50%;
     position:relative;
     z-index:5;
 }
@@ -227,6 +316,7 @@ body{
     font-size:20px;
     font-weight:700;
     transition:.3s;
+    cursor:pointer;
 }
 
 .scroll-btn:hover{
@@ -300,14 +390,14 @@ body{
 }
 
 .minecraft-card{
-    min-width:190px;
+    min-width:200px;
     border-radius:26px;
     overflow:hidden;
     text-decoration:none;
-    position:relative;
     background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.08);
     transition:.3s;
+    color:white;
 }
 
 .minecraft-card:hover{
@@ -321,12 +411,19 @@ body{
     display:block;
 }
 
-.minecraft-card span{
-    position:absolute;
-    bottom:14px;
-    left:14px;
-    font-weight:700;
-    font-size:15px;
+.minecraft-info{
+    padding:14px;
+}
+
+.minecraft-info h3{
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.minecraft-info p{
+    font-size:12px;
+    color:#cfcfcf;
+    line-height:1.6;
 }
 
 /* IKLAN */
@@ -441,18 +538,27 @@ body{
     display:block;
 }
 
-.content-title{
+.content-info{
     padding:15px;
-    font-size:14px;
-    font-weight:600;
+}
+
+.content-info h3{
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.content-info p{
+    font-size:12px;
+    color:#cfcfcf;
+    line-height:1.6;
 }
 
 /* SHOP */
 
 .shop-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
     margin-top:28px;
 }
 
@@ -462,6 +568,8 @@ body{
     background:#1f1f1f;
     border:1px solid rgba(255,255,255,.08);
     transition:.3s;
+    text-decoration:none;
+    color:white;
 }
 
 .shop-card:hover{
@@ -470,7 +578,7 @@ body{
 
 .shop-card img{
     width:100%;
-    aspect-ratio:3/4;
+    aspect-ratio:1/1;
     object-fit:cover;
     display:block;
     transition:.3s;
@@ -478,6 +586,21 @@ body{
 
 .shop-card:hover img{
     transform:scale(1.05);
+}
+
+.shop-info{
+    padding:14px;
+}
+
+.shop-info h3{
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.shop-info p{
+    font-size:12px;
+    color:#cfcfcf;
+    line-height:1.6;
 }
 
 /* MORE */
@@ -499,6 +622,7 @@ body{
     color:white;
     font-size:20px;
     transition:.3s;
+    cursor:pointer;
 }
 
 .page-btn:hover{
@@ -517,7 +641,7 @@ body{
     width:100%;
     height:140px;
     background:#1f1f1f;
-    border-radius:50% 50% 0 0;
+    border-radius:0 0 50% 50%;
     margin-top:-40px;
     position:relative;
     z-index:8;
@@ -605,6 +729,18 @@ body{
 
 /* MOBILE */
 
+@media(max-width:900px){
+
+    .top-search{
+        display:none;
+    }
+
+    .shop-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
 @media(max-width:700px){
 
     .navbar{
@@ -667,7 +803,7 @@ body{
     }
 
     .minecraft-card{
-        min-width:145px;
+        min-width:160px;
     }
 
     .slide-card{
@@ -683,8 +819,8 @@ body{
     }
 
     .shop-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
+        grid-template-columns:1fr;
+        gap:14px;
     }
 
     .footer{
