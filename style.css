@@ -178,13 +178,34 @@ body{
 /* TOP WAVE */
 
 .top-wave{
+    position:relative;
     width:100%;
-    height:140px;
+    height:170px;
     background:#2d2d2d;
     margin-top:-40px;
-    border-radius:50% 50% 0 0;
-    position:relative;
+    overflow:hidden;
     z-index:5;
+}
+
+.top-wave::before,
+.top-wave::after{
+    content:"";
+    position:absolute;
+    left:-5%;
+    width:110%;
+    background:#2d2d2d;
+}
+
+.top-wave::before{
+    height:120px;
+    bottom:55px;
+    border-radius:0 0 55% 55%;
+}
+
+.top-wave::after{
+    height:90px;
+    bottom:0;
+    border-radius:0 0 45% 45%;
 }
 
 /* MAIN CONTENT */
@@ -194,6 +215,96 @@ body{
     padding:20px 0 100px;
     position:relative;
     z-index:6;
+}
+
+/* POPULAR */
+
+.popular-section{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+    margin-top:-70px;
+    margin-bottom:70px;
+    position:relative;
+    z-index:10;
+}
+
+.popular-title{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.popular-slider{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    padding-bottom:10px;
+}
+
+.popular-slider::-webkit-scrollbar{
+    display:none;
+}
+
+.popular-card{
+    min-width:320px;
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
+    text-decoration:none;
+    color:white;
+    background:#1f1f1f;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.popular-card:hover{
+    transform:translateY(-6px);
+}
+
+.popular-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+.popular-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.1)
+    );
+}
+
+.popular-info{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    right:20px;
+}
+
+.popular-tag{
+    display:inline-block;
+    padding:7px 14px;
+    border-radius:999px;
+    background:#ff4040;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.popular-info h3{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.popular-info p{
+    color:#d8d8d8;
+    font-size:13px;
+    line-height:1.6;
 }
 
 /* CATEGORY */
@@ -262,437 +373,4 @@ body{
 .menu-buttons a:hover{
     background:#ffffff15;
     transform:translateY(-3px);
-}
-
-/* SECTION */
-
-.section-box{
-    width:92%;
-    max-width:1200px;
-    margin:auto;
-    margin-top:75px;
-}
-
-.section-header h2{
-    font-size:38px;
-    font-weight:800;
-}
-
-.section-header p{
-    margin-top:10px;
-    color:#cfcfcf;
-    line-height:1.8;
-    font-size:14px;
-}
-
-/* MINECRAFT */
-
-.minecraft-scroll{
-    display:flex;
-    gap:16px;
-    overflow-x:auto;
-    margin-top:28px;
-    padding-bottom:10px;
-}
-
-.minecraft-scroll::-webkit-scrollbar{
-    display:none;
-}
-
-.minecraft-card{
-    min-width:190px;
-    border-radius:26px;
-    overflow:hidden;
-    text-decoration:none;
-    position:relative;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
-}
-
-.minecraft-card:hover{
-    transform:translateY(-5px);
-}
-
-.minecraft-card img{
-    width:100%;
-    aspect-ratio:3/4;
-    object-fit:cover;
-    display:block;
-}
-
-.minecraft-card span{
-    position:absolute;
-    bottom:14px;
-    left:14px;
-    font-weight:700;
-    font-size:15px;
-}
-
-/* IKLAN */
-
-.slider{
-    display:flex;
-    gap:18px;
-    overflow-x:auto;
-    margin-top:28px;
-    padding-bottom:10px;
-    scroll-behavior:smooth;
-}
-
-.slider::-webkit-scrollbar{
-    display:none;
-}
-
-.slide-card{
-    min-width:340px;
-    border-radius:28px;
-    overflow:hidden;
-    text-decoration:none;
-    background:#1f1f1f;
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
-    color:white;
-}
-
-.slide-card:hover{
-    transform:translateY(-5px);
-}
-
-.slide-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.slide-info{
-    padding:18px;
-}
-
-.slide-info h3{
-    font-size:20px;
-    margin-bottom:8px;
-}
-
-.slide-info span{
-    color:#c9c9c9;
-    font-size:13px;
-}
-
-/* SEARCH */
-
-.search-box{
-    margin-top:25px;
-}
-
-.search-box input{
-    width:100%;
-    padding:17px 20px;
-    border:none;
-    border-radius:18px;
-    background:#3a3a3a;
-    color:white;
-    outline:none;
-    font-size:14px;
-}
-
-.search-box input::placeholder{
-    color:#c9c9c9;
-}
-
-/* CONTENT */
-
-.content-wrapper{
-    overflow-x:auto;
-    margin-top:28px;
-    padding-bottom:10px;
-    cursor:grab;
-}
-
-.content-wrapper::-webkit-scrollbar{
-    display:none;
-}
-
-.content-slider{
-    display:flex;
-    gap:18px;
-    width:max-content;
-}
-
-.youtube-card{
-    width:340px;
-    border-radius:24px;
-    overflow:hidden;
-    text-decoration:none;
-    background:#1f1f1f;
-    border:1px solid rgba(255,255,255,.08);
-    color:white;
-    transition:.3s;
-}
-
-.youtube-card:hover{
-    transform:translateY(-5px);
-}
-
-.youtube-card img{
-    width:100%;
-    aspect-ratio:16/9;
-    object-fit:cover;
-    display:block;
-}
-
-.content-title{
-    padding:15px;
-    font-size:14px;
-    font-weight:600;
-}
-
-/* SHOP */
-
-.shop-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-    margin-top:28px;
-}
-
-.shop-card{
-    overflow:hidden;
-    border-radius:24px;
-    background:#1f1f1f;
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
-}
-
-.shop-card:hover{
-    transform:translateY(-5px);
-}
-
-.shop-card img{
-    width:100%;
-    aspect-ratio:3/4;
-    object-fit:cover;
-    display:block;
-    transition:.3s;
-}
-
-.shop-card:hover img{
-    transform:scale(1.05);
-}
-
-/* MORE */
-
-.more-section{
-    margin-top:35px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:18px;
-}
-
-.page-btn{
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:14px;
-    background:#3b3b3b;
-    color:white;
-    font-size:20px;
-    transition:.3s;
-}
-
-.page-btn:hover{
-    background:#4a4a4a;
-}
-
-.more-text{
-    font-size:15px;
-    font-weight:700;
-    color:#d8d8d8;
-}
-
-/* FOOTER WAVE */
-
-.footer-wave{
-    width:100%;
-    height:140px;
-    background:#1f1f1f;
-    border-radius:50% 50% 0 0;
-    margin-top:-40px;
-    position:relative;
-    z-index:8;
-}
-
-/* FOOTER */
-
-.footer{
-    position:relative;
-    background:#1f1f1f;
-    padding:70px 25px;
-    overflow:hidden;
-}
-
-.footer-bg{
-    position:absolute;
-    inset:0;
-    background:url("background.jpg") center/cover;
-    filter:blur(12px) brightness(.25);
-    transform:scale(1.2);
-}
-
-.footer-logo{
-    width:80px;
-    border-radius:24px;
-    position:relative;
-    z-index:2;
-}
-
-.footer-description{
-    margin-top:24px;
-    max-width:700px;
-    line-height:2;
-    color:#d4d4d4;
-    position:relative;
-    z-index:2;
-}
-
-.footer-menu{
-    margin-top:50px;
-    display:flex;
-    gap:70px;
-    position:relative;
-    z-index:2;
-    flex-wrap:wrap;
-}
-
-.footer-column{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
-
-.footer-column h3{
-    margin-bottom:8px;
-    font-size:22px;
-}
-
-.footer-column a{
-    color:#d4d4d4;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.footer-column a:hover{
-    color:white;
-    transform:translateX(4px);
-}
-
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-    width:6px;
-    height:5px;
-}
-
-::-webkit-scrollbar-track{
-    background:#111;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#555;
-    border-radius:20px;
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    .navbar{
-        padding:15px;
-    }
-
-    .nav-logo img{
-        width:48px;
-    }
-
-    .nav-btn{
-        width:46px;
-        height:46px;
-        border-radius:14px;
-    }
-
-    .hero-section{
-        padding-top:30px;
-        padding-bottom:90px;
-    }
-
-    .profile-img{
-        width:95px;
-        height:95px;
-    }
-
-    .hero-title{
-        font-size:38px;
-    }
-
-    .hero-subtitle{
-        font-size:18px;
-    }
-
-    .hero-description{
-        font-size:13px;
-        line-height:1.8;
-    }
-
-    .social-links{
-        gap:10px;
-    }
-
-    .social-card{
-        width:50px;
-        height:50px;
-        border-radius:15px;
-    }
-
-    .top-wave{
-        height:90px;
-    }
-
-    .section-header h2{
-        font-size:30px;
-    }
-
-    .section-header p{
-        font-size:13px;
-    }
-
-    .minecraft-card{
-        min-width:145px;
-    }
-
-    .slide-card{
-        min-width:290px;
-    }
-
-    .slide-card img{
-        height:185px;
-    }
-
-    .youtube-card{
-        width:300px;
-    }
-
-    .shop-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
-    }
-
-    .footer{
-        padding:60px 20px;
-    }
-
-    .footer-menu{
-        gap:40px;
-    }
-
 }
