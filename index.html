@@ -7,7 +7,7 @@
 
 <title>Codename : Zetta</title>
 
-<link rel="stylesheet" href="./style.css?v=10">
+<link rel="stylesheet" href="./style.css?v=11">
 
 </head>
 
@@ -17,11 +17,22 @@
 
 <div class="video-container">
     <video autoplay muted loop playsinline class="bg-video">
-        <source src="background.mp4" type="video/mp4">
+        <source src="bg.mp4" type="video/mp4">
     </video>
 </div>
 
 <div class="overlay"></div>
+
+<!-- TOP HEADER -->
+
+<header class="top-header">
+
+    <div class="top-left">
+        <img src="profil.png">
+        <h2>Codename : Zetta</h2>
+    </div>
+
+</header>
 
 <!-- MAIN -->
 
@@ -31,7 +42,7 @@
 
     <div class="profile-section">
 
-        <img src="profile.png" class="profile-img">
+        <img src="profil.png" class="profile-img">
 
         <h1 class="title">Codename : Zetta</h1>
 
@@ -44,6 +55,10 @@
         </div>
 
     </div>
+
+    <!-- WAVE TOP -->
+
+    <div class="wave-top"></div>
 
     <!-- SOCIAL -->
 
@@ -76,16 +91,40 @@
 
     </div>
 
-    <!-- BUTTON MENU -->
+    <!-- MENU -->
 
-    <div class="menu-buttons">
+    <div class="shop-nav">
 
-        <a href="#minecraft">Minecraft</a>
-        <a href="#popular">Popular</a>
-        <a href="#content">Content</a>
-        <a href="#shop">Shop</a>
+        <button class="nav-btn" id="leftBtn">
+            <
+        </button>
+
+        <div class="menu-buttons" id="menuScroll">
+
+            <a href="#minecraft">Minecraft</a>
+            <a href="#popular">Popular</a>
+            <a href="#content">Content</a>
+            <a href="#shop">Shop</a>
+
+        </div>
+
+        <button class="nav-btn" id="rightBtn">
+            >
+        </button>
 
     </div>
+
+    <!-- POPULER SEKARANG -->
+
+    <section class="popular-banner">
+
+        <h2>🔥 POPULER SEKARANG!</h2>
+
+        <p>
+            Berikut adalah beberapa content paling populer saat ini.
+        </p>
+
+    </section>
 
     <!-- MINECRAFT -->
 
@@ -180,6 +219,10 @@
 
     </div>
 
+    <!-- WAVE BOTTOM -->
+
+    <div class="wave-bottom"></div>
+
     <!-- SHOP -->
 
     <div class="section-title" id="shop">
@@ -191,15 +234,14 @@
         <a href="#" class="shop-card"><img src="shop1.jpg"></a>
         <a href="#" class="shop-card"><img src="shop2.jpg"></a>
         <a href="#" class="shop-card"><img src="shop3.jpg"></a>
+
         <a href="#" class="shop-card"><img src="shop4.jpg"></a>
         <a href="#" class="shop-card"><img src="shop5.jpg"></a>
         <a href="#" class="shop-card"><img src="shop6.jpg"></a>
+
         <a href="#" class="shop-card"><img src="shop7.jpg"></a>
         <a href="#" class="shop-card"><img src="shop8.jpg"></a>
         <a href="#" class="shop-card"><img src="shop9.jpg"></a>
-        <a href="#" class="shop-card"><img src="shop10.jpg"></a>
-        <a href="#" class="shop-card"><img src="shop11.jpg"></a>
-        <a href="#" class="shop-card"><img src="shop12.jpg"></a>
 
     </div>
 
@@ -209,9 +251,7 @@
 
 <footer>
 
-    <div class="wave"></div>
-
-    <img src="profile.png" class="footer-logo">
+    <img src="profil.png" class="footer-logo">
 
     <div class="footer-text">
         Codename : Zetta Website Minecraft Modpack, Shader, Texturepack Java & Bedrock.
@@ -292,6 +332,28 @@ contentSlider.addEventListener("mousemove",(e)=>{
     contentSlider.scrollLeft = scrollLeft - walk;
 
 });
+
+/* MENU BUTTON */
+
+const menuScroll = document.getElementById("menuScroll");
+
+document.getElementById("leftBtn").onclick = () => {
+
+    menuScroll.scrollBy({
+        left:-200,
+        behavior:"smooth"
+    });
+
+};
+
+document.getElementById("rightBtn").onclick = () => {
+
+    menuScroll.scrollBy({
+        left:200,
+        behavior:"smooth"
+    });
+
+};
 
 </script>
 
