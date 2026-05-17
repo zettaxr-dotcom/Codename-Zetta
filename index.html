@@ -1,111 +1,90 @@
-<!DOCTYPE html>
-<html lang="id">
+<!-- MAIN CONTENT -->
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="main-content">
 
-<title>Codename : Zetta</title>
+    <!-- POPULAR -->
 
-<link rel="stylesheet" href="./style.css?v=20">
+    <section class="popular-section">
 
-</head>
+        <div class="popular-header">
 
-<body>
+            <h2>🔥 POPULER SEKARANG!</h2>
 
-<!-- BACKGROUND VIDEO -->
+            <p>
+                Berikut adalah beberapa content yang sedang populer saat ini.
+            </p>
 
-<div class="video-container">
-
-    <video autoplay muted loop playsinline class="bg-video">
-        <source src="background.mp4" type="video/mp4">
-    </video>
-
-</div>
-
-<div class="overlay"></div>
-
-<!-- NAVBAR -->
-
-<header class="navbar">
-
-    <div class="nav-logo">
-        <img src="logo.png">
-    </div>
-
-    <div class="nav-right">
-
-        <button class="nav-btn">
-            🔍
-        </button>
-
-        <button class="nav-btn">
-            ☰
-        </button>
-
-    </div>
-
-</header>
-
-<!-- MAIN -->
-
-<div class="container">
-
-    <!-- HERO -->
-
-    <section class="hero-section">
-
-        <img src="profile.png" class="profile-img">
-
-        <h1 class="hero-title">
-            Codename : Zetta
-        </h1>
-
-        <div class="hero-subtitle">
-            The True Dragon
         </div>
 
-        <div class="hero-description">
-            Website Minecraft Modpack, Shader, Texturepack Java & Bedrock Edition dengan visual modern dan cinematic experience.
-        </div>
+        <div class="popular-grid">
 
-        <!-- MEDIA -->
+            <a href="#" class="popular-card">
 
-        <div class="social-links">
+                <img src="popular1.jpg">
 
-            <a href="https://youtube.com/@zettaxr?si=PUA5OJtLotW2Kcby" class="social-card">
-                <img src="media1.jpg">
+                <div class="popular-overlay"></div>
+
+                <div class="popular-info">
+
+                    <h3>Content 01</h3>
+
+                    <span>Codename Zetta</span>
+
+                </div>
+
             </a>
 
-            <a href="https://www.tiktok.com/@zetta.xr?_r=1&_t=ZS-96N0pVPzRXY" class="social-card">
-                <img src="media2.jpg">
+            <a href="#" class="popular-card">
+
+                <img src="popular2.jpg">
+
+                <div class="popular-overlay"></div>
+
+                <div class="popular-info">
+
+                    <h3>Content 02</h3>
+
+                    <span>Codename Zetta</span>
+
+                </div>
+
             </a>
 
-            <a href="https://whatsapp.com/channel/0029Vb7WE39GzzKOH94qKL2l" class="social-card">
-                <img src="media3.jpg">
+            <a href="#" class="popular-card">
+
+                <img src="popular3.jpg">
+
+                <div class="popular-overlay"></div>
+
+                <div class="popular-info">
+
+                    <h3>Content 03</h3>
+
+                    <span>Codename Zetta</span>
+
+                </div>
+
             </a>
 
-            <a href="https://x.com/XrZetta38115" class="social-card">
-                <img src="media4.jpg">
-            </a>
+            <a href="#" class="popular-card">
 
-            <a href="https://t.me/+SlZzelxT6CAzZjJl" class="social-card">
-                <img src="media5.jpg">
+                <img src="popular4.jpg">
+
+                <div class="popular-overlay"></div>
+
+                <div class="popular-info">
+
+                    <h3>Content 04</h3>
+
+                    <span>Codename Zetta</span>
+
+                </div>
+
             </a>
 
         </div>
 
     </section>
-
-</div>
-
-<!-- WAVE -->
-
-<div class="top-wave"></div>
-
-<!-- MAIN CONTENT -->
-
-<div class="main-content">
 
     <!-- CATEGORY -->
 
@@ -126,7 +105,7 @@
                 <a href="#minecraft">Minecraft</a>
                 <a href="#hot">Hot</a>
                 <a href="#content">Content</a>
-                <a href="shop.html">Shop</a>
+                <a href="#shop">Shop</a>
 
             </div>
 
@@ -158,7 +137,9 @@
 
                 <img src="modpack1.jpg">
 
-                <span>Modpack</span>
+                <div class="minecraft-title">
+                    Modpack
+                </div>
 
             </a>
 
@@ -166,7 +147,9 @@
 
                 <img src="shader1.jpg">
 
-                <span>Shader</span>
+                <div class="minecraft-title">
+                    Shader
+                </div>
 
             </a>
 
@@ -174,7 +157,9 @@
 
                 <img src="texture1.jpg">
 
-                <span>Texture</span>
+                <div class="minecraft-title">
+                    Texture
+                </div>
 
             </a>
 
@@ -268,7 +253,7 @@
 
         <div class="search-box">
 
-            <input type="text" placeholder="Cari content...">
+            <input type="text" id="searchInput" placeholder="Cari content...">
 
         </div>
 
@@ -338,7 +323,7 @@
 
         </div>
 
-        <div class="shop-grid">
+        <div class="shop-grid" id="shopGrid">
 
             <a href="shop.html" class="shop-card">
                 <img src="shop1.jpg">
@@ -360,7 +345,7 @@
 
         <div class="more-section">
 
-            <button class="page-btn">
+            <button class="page-btn" id="prevShop">
                 <
             </button>
 
@@ -368,7 +353,7 @@
                 Lainnya
             </span>
 
-            <button class="page-btn">
+            <button class="page-btn" id="nextShop">
                 >
             </button>
 
@@ -377,149 +362,3 @@
     </section>
 
 </div>
-
-<!-- FOOTER WAVE -->
-
-<div class="footer-wave"></div>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-    <div class="footer-bg"></div>
-
-    <img src="profile.png" class="footer-logo">
-
-    <div class="footer-description">
-
-        Codename : Zetta merupakan website Minecraft Java & Bedrock Edition yang menyediakan modpack, shader, texturepack, content, dan update terbaru dengan tampilan modern gaming aesthetic.
-
-    </div>
-
-    <div class="footer-menu">
-
-        <div class="footer-column">
-
-            <h3>Peta Situs</h3>
-
-            <a href="#">Beranda</a>
-            <a href="#minecraft">Minecraft</a>
-            <a href="#content">Content</a>
-            <a href="shop.html">Shop</a>
-
-        </div>
-
-        <div class="footer-column">
-
-            <h3>Support</h3>
-
-            <a href="#">Telegram</a>
-            <a href="#">Whatsapp</a>
-            <a href="#">Discord</a>
-
-        </div>
-
-    </div>
-
-</footer>
-
-<!-- SCRIPT -->
-
-<script>
-
-/* AUTO IKLAN */
-
-const slider = document.getElementById("autoSlider");
-
-let scrollAmount = 0;
-
-setInterval(() => {
-
-    slider.scrollBy({
-        left:340,
-        behavior:"smooth"
-    });
-
-    scrollAmount += 340;
-
-    if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
-
-        slider.scrollTo({
-            left:0,
-            behavior:"smooth"
-        });
-
-        scrollAmount = 0;
-
-    }
-
-},4000);
-
-/* CONTENT DRAG */
-
-const contentSlider = document.getElementById("contentSlider");
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-contentSlider.addEventListener("mousedown",(e)=>{
-
-    isDown = true;
-    startX = e.pageX - contentSlider.offsetLeft;
-    scrollLeft = contentSlider.scrollLeft;
-
-});
-
-contentSlider.addEventListener("mouseleave",()=>{
-
-    isDown = false;
-
-});
-
-contentSlider.addEventListener("mouseup",()=>{
-
-    isDown = false;
-
-});
-
-contentSlider.addEventListener("mousemove",(e)=>{
-
-    if(!isDown) return;
-
-    e.preventDefault();
-
-    const x = e.pageX - contentSlider.offsetLeft;
-
-    const walk = (x - startX) * 2;
-
-    contentSlider.scrollLeft = scrollLeft - walk;
-
-});
-
-/* CATEGORY SCROLL */
-
-const menuButtons = document.getElementById("menuButtons");
-
-document.getElementById("scrollRight").onclick = () => {
-
-    menuButtons.scrollBy({
-        left:200,
-        behavior:"smooth"
-    });
-
-};
-
-document.getElementById("scrollLeft").onclick = () => {
-
-    menuButtons.scrollBy({
-        left:-200,
-        behavior:"smooth"
-    });
-
-};
-
-</script>
-
-</body>
-</html>
