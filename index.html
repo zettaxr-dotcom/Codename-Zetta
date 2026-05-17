@@ -7,7 +7,7 @@
 
 <title>Codename : Zetta</title>
 
-<link rel="stylesheet" href="./style.css?v=20">
+<link rel="stylesheet" href="./style.css?v=21">
 
 </head>
 
@@ -30,16 +30,69 @@
 <header class="navbar">
 
     <div class="nav-logo">
-        <img src="logo.png">
+        <img src="profile.jpg">
     </div>
 
     <div class="nav-right">
 
-        <button class="nav-btn">
+        <!-- SEARCH -->
+
+        <div class="search-popup" id="searchPopup">
+
+            <input 
+            type="text" 
+            id="navbarSearch" 
+            placeholder="Cari content...">
+
+            <button id="searchBtn">
+                Cari
+            </button>
+
+        </div>
+
+        <button class="nav-btn" id="searchToggle">
             🔍
         </button>
 
-        <button class="nav-btn">
+        <!-- MENU -->
+
+        <div class="menu-popup" id="menuPopup">
+
+            <a href="#minecraft">
+                Minecraft
+            </a>
+
+            <div class="submenu">
+
+                <a href="texture1.html">
+                    Texture
+                </a>
+
+                <a href="shader1.html">
+                    Shader
+                </a>
+
+                <a href="mps.html">
+                    Mod
+                </a>
+
+            </div>
+
+            <a href="#hot">
+                Hot
+            </a>
+
+            <a href="#content">
+                Content
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+        </div>
+
+        <button class="nav-btn" id="menuToggle">
             ☰
         </button>
 
@@ -50,8 +103,6 @@
 <!-- MAIN -->
 
 <div class="container">
-
-    <!-- HERO -->
 
     <section class="hero-section">
 
@@ -106,6 +157,82 @@
 <!-- MAIN CONTENT -->
 
 <div class="main-content">
+
+    <!-- POPULER -->
+
+    <section class="popular-section">
+
+        <div class="section-header">
+
+            <h2>
+                🔥 Populer Sekarang!
+            </h2>
+
+            <p>
+                Content Minecraft paling ramai dan trending.
+            </p>
+
+        </div>
+
+        <div class="popular-grid">
+
+            <a href="shader1.html" class="popular-card">
+
+                <img src="shader1.jpg">
+
+                <div class="popular-info">
+
+                    <h3>
+                        Shader Realistic
+                    </h3>
+
+                    <span>
+                        Minecraft
+                    </span>
+
+                </div>
+
+            </a>
+
+            <a href="texture1.html" class="popular-card">
+
+                <img src="texture1.jpg">
+
+                <div class="popular-info">
+
+                    <h3>
+                        Texture FPS Boost
+                    </h3>
+
+                    <span>
+                        Texturepack
+                    </span>
+
+                </div>
+
+            </a>
+
+            <a href="mps.html" class="popular-card">
+
+                <img src="modpack1.jpg">
+
+                <div class="popular-info">
+
+                    <h3>
+                        Survival Modpack
+                    </h3>
+
+                    <span>
+                        Modpack
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
 
     <!-- CATEGORY -->
 
@@ -264,15 +391,11 @@
 
         </div>
 
-        <!-- SEARCH -->
-
         <div class="search-box">
 
             <input type="text" placeholder="Cari content...">
 
         </div>
-
-        <!-- CONTENT SLIDER -->
 
         <div class="content-wrapper">
 
@@ -340,47 +463,27 @@
 
         <div class="shop-grid">
 
-            <a href="shop.html" class="shop-card">
-                <img src="shop1.jpg">
-            </a>
+            <a href="shop.html" class="shop-card"><img src="shop1.jpg"></a>
+            <a href="shop.html" class="shop-card"><img src="shop2.jpg"></a>
+            <a href="shop.html" class="shop-card"><img src="shop3.jpg"></a>
 
-            <a href="shop.html" class="shop-card">
-                <img src="shop2.jpg">
-            </a>
+            <a href="shop.html" class="shop-card"><img src="shop4.jpg"></a>
+            <a href="shop.html" class="shop-card"><img src="shop1.jpg"></a>
+            <a href="shop.html" class="shop-card"><img src="shop2.jpg"></a>
 
-            <a href="shop.html" class="shop-card">
-                <img src="shop3.jpg">
-            </a>
+            <a href="shop.html" class="shop-card"><img src="shop3.jpg"></a>
+            <a href="shop.html" class="shop-card"><img src="shop4.jpg"></a>
+            <a href="shop.html" class="shop-card"><img src="shop1.jpg"></a>
 
-            <a href="shop.html" class="shop-card">
-                <img src="shop4.jpg">
-            </a>
-
-        </div>
-
-        <div class="more-section">
-
-            <button class="page-btn">
-                <
-            </button>
-
-            <span class="more-text">
-                Lainnya
-            </span>
-
-            <button class="page-btn">
-                >
-            </button>
+            <a href="shop.html" class="shop-card"><img src="shop2.jpg"></a>
+            <a href="shop.html" class="shop-card"><img src="shop3.jpg"></a>
+            <a href="shop.html" class="shop-card"><img src="shop4.jpg"></a>
 
         </div>
 
     </section>
 
 </div>
-
-<!-- FOOTER WAVE -->
-
-<div class="footer-wave"></div>
 
 <!-- FOOTER -->
 
@@ -393,31 +496,6 @@
     <div class="footer-description">
 
         Codename : Zetta merupakan website Minecraft Java & Bedrock Edition yang menyediakan modpack, shader, texturepack, content, dan update terbaru dengan tampilan modern gaming aesthetic.
-
-    </div>
-
-    <div class="footer-menu">
-
-        <div class="footer-column">
-
-            <h3>Peta Situs</h3>
-
-            <a href="#">Beranda</a>
-            <a href="#minecraft">Minecraft</a>
-            <a href="#content">Content</a>
-            <a href="shop.html">Shop</a>
-
-        </div>
-
-        <div class="footer-column">
-
-            <h3>Support</h3>
-
-            <a href="#">Telegram</a>
-            <a href="#">Whatsapp</a>
-            <a href="#">Discord</a>
-
-        </div>
 
     </div>
 
@@ -516,6 +594,75 @@ document.getElementById("scrollLeft").onclick = () => {
         left:-200,
         behavior:"smooth"
     });
+
+};
+
+/* MENU */
+
+const menuToggle = document.getElementById("menuToggle");
+
+const menuPopup = document.getElementById("menuPopup");
+
+menuToggle.onclick = () => {
+
+    menuPopup.classList.toggle("active");
+
+};
+
+/* SEARCH */
+
+const searchToggle = document.getElementById("searchToggle");
+
+const searchPopup = document.getElementById("searchPopup");
+
+searchToggle.onclick = () => {
+
+    searchPopup.classList.toggle("active");
+
+};
+
+/* SEARCH SYSTEM */
+
+document.getElementById("searchBtn").onclick = () => {
+
+    const value = document
+    .getElementById("navbarSearch")
+    .value
+    .toLowerCase();
+
+    if(value.includes("shader")){
+
+        window.location.href = "shader1.html";
+
+    }
+
+    else if(value.includes("texture")){
+
+        window.location.href = "texture1.html";
+
+    }
+
+    else if(
+        value.includes("mod")
+        ||
+        value.includes("minecraft")
+    ){
+
+        window.location.href = "mps.html";
+
+    }
+
+    else if(value.includes("shop")){
+
+        window.location.href = "shop.html";
+
+    }
+
+    else{
+
+        alert("Content tidak ditemukan");
+
+    }
 
 };
 
