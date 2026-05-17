@@ -475,15 +475,15 @@
             <a href="shop.html" class="shop-card"><img src="shop4.jpg"></a>
             <a href="shop.html" class="shop-card"><img src="shop1.jpg"></a>
 
-            <a href="shop.html" class="shop-card"><img src="shop2.jpg"></a>
-            <a href="shop.html" class="shop-card"><img src="shop3.jpg"></a>
-            <a href="shop.html" class="shop-card"><img src="shop4.jpg"></a>
-
         </div>
 
     </section>
 
 </div>
+
+<!-- FOOTER WAVE -->
+
+<div class="footer-wave"></div>
 
 <!-- FOOTER -->
 
@@ -514,7 +514,7 @@ let scrollAmount = 0;
 setInterval(() => {
 
     slider.scrollBy({
-        left:340,
+        left: window.innerWidth < 700 ? 270 : 340,
         behavior:"smooth"
     });
 
@@ -532,139 +532,6 @@ setInterval(() => {
     }
 
 },4000);
-
-/* CONTENT DRAG */
-
-const contentSlider = document.getElementById("contentSlider");
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-contentSlider.addEventListener("mousedown",(e)=>{
-
-    isDown = true;
-    startX = e.pageX - contentSlider.offsetLeft;
-    scrollLeft = contentSlider.scrollLeft;
-
-});
-
-contentSlider.addEventListener("mouseleave",()=>{
-
-    isDown = false;
-
-});
-
-contentSlider.addEventListener("mouseup",()=>{
-
-    isDown = false;
-
-});
-
-contentSlider.addEventListener("mousemove",(e)=>{
-
-    if(!isDown) return;
-
-    e.preventDefault();
-
-    const x = e.pageX - contentSlider.offsetLeft;
-
-    const walk = (x - startX) * 2;
-
-    contentSlider.scrollLeft = scrollLeft - walk;
-
-});
-
-/* CATEGORY SCROLL */
-
-const menuButtons = document.getElementById("menuButtons");
-
-document.getElementById("scrollRight").onclick = () => {
-
-    menuButtons.scrollBy({
-        left:200,
-        behavior:"smooth"
-    });
-
-};
-
-document.getElementById("scrollLeft").onclick = () => {
-
-    menuButtons.scrollBy({
-        left:-200,
-        behavior:"smooth"
-    });
-
-};
-
-/* MENU */
-
-const menuToggle = document.getElementById("menuToggle");
-
-const menuPopup = document.getElementById("menuPopup");
-
-menuToggle.onclick = () => {
-
-    menuPopup.classList.toggle("active");
-
-};
-
-/* SEARCH */
-
-const searchToggle = document.getElementById("searchToggle");
-
-const searchPopup = document.getElementById("searchPopup");
-
-searchToggle.onclick = () => {
-
-    searchPopup.classList.toggle("active");
-
-};
-
-/* SEARCH SYSTEM */
-
-document.getElementById("searchBtn").onclick = () => {
-
-    const value = document
-    .getElementById("navbarSearch")
-    .value
-    .toLowerCase();
-
-    if(value.includes("shader")){
-
-        window.location.href = "shader1.html";
-
-    }
-
-    else if(value.includes("texture")){
-
-        window.location.href = "texture1.html";
-
-    }
-
-    else if(
-        value.includes("mod")
-        ||
-        value.includes("minecraft")
-    ){
-
-        window.location.href = "mps.html";
-
-    }
-
-    else if(value.includes("shop")){
-
-        window.location.href = "shop.html";
-
-    }
-
-    else{
-
-        alert("Content tidak ditemukan");
-
-    }
-
-};
 
 </script>
 
