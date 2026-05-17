@@ -107,6 +107,96 @@
 
 <div class="main-content">
 
+    <!-- POPULAR NOW -->
+
+    <section class="popular-section">
+
+        <div class="popular-header">
+
+            <div>
+
+                <span class="popular-mini">
+                    Popular Now
+                </span>
+
+                <h2>
+                    Trending Minecraft Content
+                </h2>
+
+                <p>
+                    Content, shader, texture, dan update yang lagi ramai sekarang.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="popular-grid">
+
+            <a href="#" class="popular-big-card">
+
+                <img src="promo1.jpg">
+
+                <div class="popular-overlay">
+
+                    <span>HOT UPDATE</span>
+
+                    <h3>
+                        Derivative Overhoul Remastered
+                    </h3>
+
+                    <p>
+                        Shader cinematic ultra realistic dengan visual next generation.
+                    </p>
+
+                </div>
+
+            </a>
+
+            <div class="popular-side">
+
+                <a href="#" class="popular-small-card">
+
+                    <img src="promo2.jpg">
+
+                    <div>
+
+                        <h4>
+                            New Modpack
+                        </h4>
+
+                        <span>
+                            Hardcore survival realistic.
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <a href="#" class="popular-small-card">
+
+                    <img src="promo3.jpg">
+
+                    <div>
+
+                        <h4>
+                            RTX Texture
+                        </h4>
+
+                        <span>
+                            Bedrock realistic texturepack.
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- CATEGORY -->
 
     <div class="category-section">
@@ -268,7 +358,10 @@
 
         <div class="search-box">
 
-            <input type="text" placeholder="Cari content...">
+            <input 
+            type="text" 
+            id="searchInput"
+            placeholder="Cari content...">
 
         </div>
 
@@ -282,8 +375,12 @@
 
                     <img src="content1.jpg">
 
-                    <div class="content-title">
-                        Showcase Shader Realistic
+                    <div class="content-info">
+
+                        <div class="content-title">
+                            Showcase Shader Realistic
+                        </div>
+
                     </div>
 
                 </a>
@@ -292,8 +389,12 @@
 
                     <img src="content2.jpg">
 
-                    <div class="content-title">
-                        Survival Modpack 100 Days
+                    <div class="content-info">
+
+                        <div class="content-title">
+                            Survival Modpack 100 Days
+                        </div>
+
                     </div>
 
                 </a>
@@ -302,8 +403,12 @@
 
                     <img src="content3.jpg">
 
-                    <div class="content-title">
-                        Texturepack FPS Boost
+                    <div class="content-info">
+
+                        <div class="content-title">
+                            Texturepack FPS Boost
+                        </div>
+
                     </div>
 
                 </a>
@@ -312,8 +417,12 @@
 
                     <img src="content4.jpg">
 
-                    <div class="content-title">
-                        Best Cinematic Shader
+                    <div class="content-info">
+
+                        <div class="content-title">
+                            Best Cinematic Shader
+                        </div>
+
                     </div>
 
                 </a>
@@ -356,6 +465,38 @@
                 <img src="shop4.jpg">
             </a>
 
+            <a href="shop.html" class="shop-card">
+                <img src="shop5.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop6.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop7.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop8.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop9.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop10.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop11.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop12.jpg">
+            </a>
+
         </div>
 
         <div class="more-section">
@@ -377,149 +518,3 @@
     </section>
 
 </div>
-
-<!-- FOOTER WAVE -->
-
-<div class="footer-wave"></div>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-    <div class="footer-bg"></div>
-
-    <img src="profile.png" class="footer-logo">
-
-    <div class="footer-description">
-
-        Codename : Zetta merupakan website Minecraft Java & Bedrock Edition yang menyediakan modpack, shader, texturepack, content, dan update terbaru dengan tampilan modern gaming aesthetic.
-
-    </div>
-
-    <div class="footer-menu">
-
-        <div class="footer-column">
-
-            <h3>Peta Situs</h3>
-
-            <a href="#">Beranda</a>
-            <a href="#minecraft">Minecraft</a>
-            <a href="#content">Content</a>
-            <a href="shop.html">Shop</a>
-
-        </div>
-
-        <div class="footer-column">
-
-            <h3>Support</h3>
-
-            <a href="#">Telegram</a>
-            <a href="#">Whatsapp</a>
-            <a href="#">Discord</a>
-
-        </div>
-
-    </div>
-
-</footer>
-
-<!-- SCRIPT -->
-
-<script>
-
-/* AUTO IKLAN */
-
-const slider = document.getElementById("autoSlider");
-
-let scrollAmount = 0;
-
-setInterval(() => {
-
-    slider.scrollBy({
-        left:340,
-        behavior:"smooth"
-    });
-
-    scrollAmount += 340;
-
-    if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
-
-        slider.scrollTo({
-            left:0,
-            behavior:"smooth"
-        });
-
-        scrollAmount = 0;
-
-    }
-
-},4000);
-
-/* CONTENT DRAG */
-
-const contentSlider = document.getElementById("contentSlider");
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-contentSlider.addEventListener("mousedown",(e)=>{
-
-    isDown = true;
-    startX = e.pageX - contentSlider.offsetLeft;
-    scrollLeft = contentSlider.scrollLeft;
-
-});
-
-contentSlider.addEventListener("mouseleave",()=>{
-
-    isDown = false;
-
-});
-
-contentSlider.addEventListener("mouseup",()=>{
-
-    isDown = false;
-
-});
-
-contentSlider.addEventListener("mousemove",(e)=>{
-
-    if(!isDown) return;
-
-    e.preventDefault();
-
-    const x = e.pageX - contentSlider.offsetLeft;
-
-    const walk = (x - startX) * 2;
-
-    contentSlider.scrollLeft = scrollLeft - walk;
-
-});
-
-/* CATEGORY SCROLL */
-
-const menuButtons = document.getElementById("menuButtons");
-
-document.getElementById("scrollRight").onclick = () => {
-
-    menuButtons.scrollBy({
-        left:200,
-        behavior:"smooth"
-    });
-
-};
-
-document.getElementById("scrollLeft").onclick = () => {
-
-    menuButtons.scrollBy({
-        left:-200,
-        behavior:"smooth"
-    });
-
-};
-
-</script>
-
-</body>
-</html>
