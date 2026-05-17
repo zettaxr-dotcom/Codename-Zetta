@@ -1,70 +1,213 @@
 /* =========================
-   CODE NAME : ZETTA
-   SCRIPT.JS
+   AUTO SLIDER IKLAN SMOOTH
 ========================= */
 
+const slider = document.getElementById("autoSlider");
 
-/* =========================
-   AUTO SLIDER
-========================= */
+let autoSlide = 0;
 
-const slider = document.getElementById("slider");
+function smoothSlider(){
 
-let scrollAmount = 0;
+    const cards = document.querySelectorAll(".slide-card");
 
-function autoSlide(){
+    if(cards.length === 0) return;
 
-    if(!slider) return;
+    const cardWidth = cards[0].offsetWidth + 18;
 
-    scrollAmount += 1;
+    autoSlide++;
 
-    slider.scrollLeft = scrollAmount;
+    if(autoSlide >= cards.length){
 
-    if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
-        scrollAmount = 0;
+        autoSlide = 0;
+
     }
+
+    slider.scrollTo({
+        left:autoSlide * cardWidth,
+        behavior:"smooth"
+    });
 
 }
 
-setInterval(autoSlide, 20);
+setInterval(smoothSlider, 4000);
 
 
 /* =========================
-   CLICK ANIMATION
+   CATEGORY SCROLL
+========================= */
+
+const menuButtons = document.getElementById("menuButtons");
+
+document.getElementById("scrollRight").addEventListener("click", () => {
+
+    menuButtons.scrollBy({
+        left:220,
+        behavior:"smooth"
+    });
+
+});
+
+document.getElementById("scrollLeft").addEventListener("click", () => {
+
+    menuButtons.scrollBy({
+        left:-220,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* =========================
+   SEARCH CONTENT
+========================= */
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", () => {
+
+    const filter = searchInput.value.toLowerCase();
+
+    const cards = document.querySelectorAll(".youtube-card");
+
+    cards.forEach(card => {
+
+        const title = card.querySelector(".content-title")
+        .innerText
+        .toLowerCase();
+
+        if(title.includes(filter)){
+
+            card.style.display = "flex";
+
+            setTimeout(() => {
+                card.style.opacity = "1";
+                card.style.transform = "scale(1)";
+            },50);
+
+        } else {
+
+            card.style.opacity = "0";
+            card.style.transform = "scale(.9)";
+
+            setTimeout(() => {
+                card.style.display = "none";
+            },200);
+
+        }
+
+    });
+
+});
+
+
+/* =========================
+   ANIMATION SCROLL REVEAL
+========================= */
+
+const revealElements = document.querySelectorAll(
+".section-box, .minecraft-card, .youtube-card, .shop-card, .popular-card"
+);
+
+const revealOnScroll = () => {
+
+    const windowHeight = window.innerHeight;
+
+    revealElements.forEach(el => {
+
+        const elementTop = el.getBoundingClientRect().top;
+
+        if(elementTop < windowHeight - 80){
+
+            el.classList.add("active-reveal");
+
+        }
+
+    });
+
+};
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
+
+
+/* =========================
+   PARALLAX HERO
+========================= */
+
+window.addEventListener("scroll", () => {
+
+    const scrollY = window.scrollY;
+
+    const hero = document.querySelector(".hero-section");
+
+    hero.style.transform = `translateY(${scrollY * 0.08}px)`;
+
+});
+
+
+/* =========================
+   HOVER EFFECT CARD
+========================= */
+
+const hoverCards = document.querySelectorAll(
+".youtube-card, .shop-card, .popular-card, .minecraft-card"
+);
+
+hoverCards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateY = ((x / rect.width) - 0.5) * 8;
+        const rotateX = ((y / rect.height) - 0.5) * -8;
+
+        card.style.transform = `
+            perspective(1000px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateY(-6px)
+        `;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = `
+            perspective(1000px)
+            rotateX(0deg)
+            rotateY(0deg)
+            translateY(0px)
+        `;
+
+    });
+
+});
+
+
+/* =========================
+   SMOOTH BUTTON EFFECT
 ========================= */
 
 const buttons = document.querySelectorAll(
-`
-a,
-button,
-.link-box,
-.content-card,
-.slide-card,
-.youtube-card
-`
+".nav-btn, .scroll-btn, .page-btn"
 );
 
-buttons.forEach(button => {
+buttons.forEach(btn => {
 
-    button.addEventListener("click", function(e){
+    btn.addEventListener("mousedown", () => {
 
-        const ripple = document.createElement("span");
+        btn.style.transform = "scale(.92)";
 
-        ripple.classList.add("ripple");
+    });
 
-        const rect = button.getBoundingClientRect();
+    btn.addEventListener("mouseup", () => {
 
-        ripple.style.left =
-        e.clientX - rect.left + "px";
-
-        ripple.style.top =
-        e.clientY - rect.top + "px";
-
-        button.appendChild(ripple);
-
-        setTimeout(() => {
-            ripple.remove();
-        }, 700);
+        btn.style.transform = "scale(1)";
 
     });
 
@@ -72,243 +215,37 @@ buttons.forEach(button => {
 
 
 /* =========================
-   SCROLL ANIMATION
+   REVEAL CLASS AUTO STYLE
 ========================= */
 
-const hiddenElements =
-document.querySelectorAll(
-`
-.link-box,
-.slide-card,
-.content-card,
-.youtube-card,
-.menu-buttons a
-`
-);
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach((entry)=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-});
-
-hiddenElements.forEach((el)=>{
-
-    el.classList.add("hidden");
-
-    observer.observe(el);
-
-});
-
-
-/* =========================
-   HOVER SOUND EFFECT
-========================= */
-
-const hoverItems = document.querySelectorAll(
-`
-.link-box,
-.content-card,
-.slide-card,
-.youtube-card
-`
-);
-
-hoverItems.forEach(item => {
-
-    item.addEventListener("mouseenter", ()=>{
-
-        item.style.transition =
-        "all 0.35s ease";
-
-    });
-
-});
-
-
-/* =========================
-   SMOOTH SCROLL
-========================= */
-
-document.querySelectorAll('a[href^="#"]')
-.forEach(anchor => {
-
-    anchor.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        const target =
-        document.querySelector(
-        this.getAttribute("href")
-        );
-
-        if(target){
-
-            target.scrollIntoView({
-
-                behavior:"smooth",
-                block:"start"
-
-            });
-
-        }
-
-    });
-
-});
-
-
-/* =========================
-   GLOW EFFECT ON MOVE
-========================= */
-
-document.addEventListener("mousemove",(e)=>{
-
-    const cards =
-    document.querySelectorAll(
-    `
-    .link-box,
-    .content-card,
-    .slide-card,
-    .youtube-card
-    `
-    );
-
-    cards.forEach(card=>{
-
-        const rect =
-        card.getBoundingClientRect();
-
-        const x =
-        e.clientX - rect.left;
-
-        const y =
-        e.clientY - rect.top;
-
-        card.style.setProperty("--x",`${x}px`);
-        card.style.setProperty("--y",`${y}px`);
-
-    });
-
-});
-
-
-/* =========================
-   PARALLAX PROFILE
-========================= */
-
-const profile =
-document.querySelector(".profile-img");
-
-document.addEventListener("mousemove",(e)=>{
-
-    if(!profile) return;
-
-    const x =
-    (window.innerWidth / 2 - e.pageX) / 40;
-
-    const y =
-    (window.innerHeight / 2 - e.pageY) / 40;
-
-    profile.style.transform =
-    `translate(${x}px, ${y}px)`;
-
-});
-
-
-/* =========================
-   LOADING EFFECT
-========================= */
-
-window.addEventListener("load", ()=>{
-
-    document.body.classList.add("loaded");
-
-});
-
-
-/* =========================
-   RANDOM FADE DELAY
-========================= */
-
-const animatedCards =
-document.querySelectorAll(
-`
-.link-box,
-.slide-card,
-.content-card,
-.youtube-card
-`
-);
-
-animatedCards.forEach((card,index)=>{
-
-    card.style.animationDelay =
-    `${index * 0.1}s`;
-
-});
-
-
-/* =========================
-   RIPPLE STYLE
-========================= */
-
-const style =
-document.createElement("style");
+const style = document.createElement("style");
 
 style.innerHTML = `
 
-.ripple{
-
-    position:absolute;
-    width:20px;
-    height:20px;
-    background:rgba(255,255,255,0.5);
-    border-radius:50%;
-    transform:translate(-50%,-50%);
-    animation:rippleEffect 0.7s linear;
-    pointer-events:none;
-
+.active-reveal{
+    animation:fadeUp .7s ease forwards;
 }
 
-@keyframes rippleEffect{
+@keyframes fadeUp{
 
     from{
-        width:0;
-        height:0;
-        opacity:1;
+        opacity:0;
+        transform:translateY(40px);
     }
 
     to{
-        width:500px;
-        height:500px;
-        opacity:0;
+        opacity:1;
+        transform:translateY(0);
     }
 
 }
 
-.hidden{
-
+.section-box,
+.minecraft-card,
+.youtube-card,
+.shop-card,
+.popular-card{
     opacity:0;
-    transform:translateY(40px);
-    transition:
-    all 1s ease;
-
-}
-
-.show{
-
-    opacity:1;
-    transform:translateY(0);
-
 }
 
 `;
