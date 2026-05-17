@@ -8,7 +8,8 @@
    AUTO IKLAN SLIDER
 ========================= */
 
-const slider = document.getElementById("autoSlider");
+const slider =
+document.getElementById("autoSlider");
 
 let autoScroll = 0;
 
@@ -31,59 +32,92 @@ function autoSlide(){
 
 }
 
-setInterval(autoSlide, 15);
+setInterval(autoSlide,15);
+
+
+/* =========================
+   POPULAR AUTO SCROLL
+========================= */
+
+const popularSlider =
+document.querySelector(".popular-scroll");
+
+let popularScroll = 0;
+
+function autoPopular(){
+
+    if(!popularSlider) return;
+
+    popularScroll += 1;
+
+    popularSlider.scrollLeft =
+    popularScroll;
+
+    if(
+        popularScroll >=
+        popularSlider.scrollWidth -
+        popularSlider.clientWidth
+    ){
+
+        popularScroll = 0;
+
+    }
+
+}
+
+setInterval(autoPopular,20);
 
 
 /* =========================
    CONTENT DRAG SCROLL
 ========================= */
 
-const contentSlider =
-document.getElementById("contentSlider");
+const contentWrapper =
+document.querySelector(".content-wrapper");
 
 let isDown = false;
 let startX;
 let scrollLeft;
 
-if(contentSlider){
+if(contentWrapper){
 
-    contentSlider.addEventListener("mousedown",(e)=>{
+    contentWrapper.addEventListener("mousedown",(e)=>{
 
         isDown = true;
 
         startX =
-        e.pageX - contentSlider.offsetLeft;
+        e.pageX - contentWrapper.offsetLeft;
 
         scrollLeft =
-        contentSlider.scrollLeft;
+        contentWrapper.scrollLeft;
 
     });
 
-    contentSlider.addEventListener("mouseleave",()=>{
+    contentWrapper.addEventListener("mouseleave",()=>{
 
         isDown = false;
 
     });
 
-    contentSlider.addEventListener("mouseup",()=>{
+    contentWrapper.addEventListener("mouseup",()=>{
 
         isDown = false;
 
     });
 
-    contentSlider.addEventListener("mousemove",(e)=>{
+    contentWrapper.addEventListener("mousemove",(e)=>{
 
         if(!isDown) return;
 
         e.preventDefault();
 
         const x =
-        e.pageX - contentSlider.offsetLeft;
+        e.pageX - contentWrapper.offsetLeft;
 
         const walk =
         (x - startX) * 2;
 
-        contentSlider.scrollLeft =
+        contentWrapper.scrollLeft =
         scrollLeft - walk;
 
     });
@@ -157,7 +191,7 @@ buttons.forEach(button => {
     button.style.position = "relative";
     button.style.overflow = "hidden";
 
-    button.addEventListener("click", function(e){
+    button.addEventListener("click",function(e){
 
         const ripple =
         document.createElement("span");
@@ -175,7 +209,7 @@ buttons.forEach(button => {
 
         button.appendChild(ripple);
 
-        setTimeout(() => {
+        setTimeout(()=>{
 
             ripple.remove();
 
@@ -236,7 +270,7 @@ hiddenElements.forEach((el)=>{
 document.querySelectorAll('a[href^="#"]')
 .forEach(anchor => {
 
-    anchor.addEventListener("click", function(e){
+    anchor.addEventListener("click",function(e){
 
         e.preventDefault();
 
@@ -359,50 +393,6 @@ animatedCards.forEach((card,index)=>{
     `${index * 0.08}s`;
 
 });
-
-
-/* =========================
-   SHOP PAGINATION EFFECT
-========================= */
-
-const shopGrid =
-document.getElementById("shopGrid");
-
-const shopNext =
-document.getElementById("shopNext");
-
-const shopPrev =
-document.getElementById("shopPrev");
-
-if(shopNext){
-
-    shopNext.addEventListener("click",()=>{
-
-        shopGrid.scrollBy({
-
-            left:400,
-            behavior:"smooth"
-
-        });
-
-    });
-
-}
-
-if(shopPrev){
-
-    shopPrev.addEventListener("click",()=>{
-
-        shopGrid.scrollBy({
-
-            left:-400,
-            behavior:"smooth"
-
-        });
-
-    });
-
-}
 
 
 /* =========================
