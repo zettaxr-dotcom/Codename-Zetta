@@ -5,201 +5,54 @@
 
 
 /* =========================
-   AUTO IKLAN SLIDER
+   AUTO SLIDER
 ========================= */
 
-const slider =
-document.getElementById("autoSlider");
+const slider = document.getElementById("slider");
 
-let autoScroll = 0;
+let scrollAmount = 0;
 
 function autoSlide(){
 
     if(!slider) return;
 
-    autoScroll += 1;
+    scrollAmount += 1;
 
-    slider.scrollLeft = autoScroll;
+    slider.scrollLeft = scrollAmount;
 
-    if(
-        autoScroll >=
-        slider.scrollWidth - slider.clientWidth
-    ){
-
-        autoScroll = 0;
-
+    if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
+        scrollAmount = 0;
     }
 
 }
 
-setInterval(autoSlide,15);
+setInterval(autoSlide, 20);
 
 
 /* =========================
-   POPULAR AUTO SCROLL
-========================= */
-
-const popularSlider =
-document.querySelector(".popular-scroll");
-
-let popularScroll = 0;
-
-function autoPopular(){
-
-    if(!popularSlider) return;
-
-    popularScroll += 1;
-
-    popularSlider.scrollLeft =
-    popularScroll;
-
-    if(
-        popularScroll >=
-        popularSlider.scrollWidth -
-        popularSlider.clientWidth
-    ){
-
-        popularScroll = 0;
-
-    }
-
-}
-
-setInterval(autoPopular,20);
-
-
-/* =========================
-   CONTENT DRAG SCROLL
-========================= */
-
-const contentWrapper =
-document.querySelector(".content-wrapper");
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-if(contentWrapper){
-
-    contentWrapper.addEventListener("mousedown",(e)=>{
-
-        isDown = true;
-
-        startX =
-        e.pageX - contentWrapper.offsetLeft;
-
-        scrollLeft =
-        contentWrapper.scrollLeft;
-
-    });
-
-    contentWrapper.addEventListener("mouseleave",()=>{
-
-        isDown = false;
-
-    });
-
-    contentWrapper.addEventListener("mouseup",()=>{
-
-        isDown = false;
-
-    });
-
-    contentWrapper.addEventListener("mousemove",(e)=>{
-
-        if(!isDown) return;
-
-        e.preventDefault();
-
-        const x =
-        e.pageX - contentWrapper.offsetLeft;
-
-        const walk =
-        (x - startX) * 2;
-
-        contentWrapper.scrollLeft =
-        scrollLeft - walk;
-
-    });
-
-}
-
-
-/* =========================
-   CATEGORY BUTTON SCROLL
-========================= */
-
-const menuButtons =
-document.getElementById("menuButtons");
-
-const scrollRight =
-document.getElementById("scrollRight");
-
-const scrollLeftBtn =
-document.getElementById("scrollLeft");
-
-if(scrollRight){
-
-    scrollRight.onclick = () => {
-
-        menuButtons.scrollBy({
-
-            left:220,
-            behavior:"smooth"
-
-        });
-
-    };
-
-}
-
-if(scrollLeftBtn){
-
-    scrollLeftBtn.onclick = () => {
-
-        menuButtons.scrollBy({
-
-            left:-220,
-            behavior:"smooth"
-
-        });
-
-    };
-
-}
-
-
-/* =========================
-   CLICK RIPPLE EFFECT
+   CLICK ANIMATION
 ========================= */
 
 const buttons = document.querySelectorAll(
 `
 a,
 button,
+.link-box,
+.content-card,
 .slide-card,
-.youtube-card,
-.social-card,
-.minecraft-card,
-.shop-card,
-.popular-card
+.youtube-card
 `
 );
 
 buttons.forEach(button => {
 
-    button.style.position = "relative";
-    button.style.overflow = "hidden";
+    button.addEventListener("click", function(e){
 
-    button.addEventListener("click",function(e){
-
-        const ripple =
-        document.createElement("span");
+        const ripple = document.createElement("span");
 
         ripple.classList.add("ripple");
 
-        const rect =
-        button.getBoundingClientRect();
+        const rect = button.getBoundingClientRect();
 
         ripple.style.left =
         e.clientX - rect.left + "px";
@@ -209,11 +62,9 @@ buttons.forEach(button => {
 
         button.appendChild(ripple);
 
-        setTimeout(()=>{
-
+        setTimeout(() => {
             ripple.remove();
-
-        },700);
+        }, 700);
 
     });
 
@@ -227,18 +78,15 @@ buttons.forEach(button => {
 const hiddenElements =
 document.querySelectorAll(
 `
+.link-box,
 .slide-card,
+.content-card,
 .youtube-card,
-.menu-buttons a,
-.minecraft-card,
-.shop-card,
-.social-card,
-.popular-card
+.menu-buttons a
 `
 );
 
-const observer =
-new IntersectionObserver((entries)=>{
+const observer = new IntersectionObserver((entries)=>{
 
     entries.forEach((entry)=>{
 
@@ -250,8 +98,6 @@ new IntersectionObserver((entries)=>{
 
     });
 
-},{
-    threshold:0.12
 });
 
 hiddenElements.forEach((el)=>{
@@ -264,13 +110,38 @@ hiddenElements.forEach((el)=>{
 
 
 /* =========================
+   HOVER SOUND EFFECT
+========================= */
+
+const hoverItems = document.querySelectorAll(
+`
+.link-box,
+.content-card,
+.slide-card,
+.youtube-card
+`
+);
+
+hoverItems.forEach(item => {
+
+    item.addEventListener("mouseenter", ()=>{
+
+        item.style.transition =
+        "all 0.35s ease";
+
+    });
+
+});
+
+
+/* =========================
    SMOOTH SCROLL
 ========================= */
 
 document.querySelectorAll('a[href^="#"]')
 .forEach(anchor => {
 
-    anchor.addEventListener("click",function(e){
+    anchor.addEventListener("click", function(e){
 
         e.preventDefault();
 
@@ -296,7 +167,7 @@ document.querySelectorAll('a[href^="#"]')
 
 
 /* =========================
-   GLOW EFFECT
+   GLOW EFFECT ON MOVE
 ========================= */
 
 document.addEventListener("mousemove",(e)=>{
@@ -304,11 +175,10 @@ document.addEventListener("mousemove",(e)=>{
     const cards =
     document.querySelectorAll(
     `
+    .link-box,
+    .content-card,
     .slide-card,
-    .youtube-card,
-    .minecraft-card,
-    .shop-card,
-    .popular-card
+    .youtube-card
     `
     );
 
@@ -323,15 +193,8 @@ document.addEventListener("mousemove",(e)=>{
         const y =
         e.clientY - rect.top;
 
-        card.style.setProperty(
-            "--x",
-            `${x}px`
-        );
-
-        card.style.setProperty(
-            "--y",
-            `${y}px`
-        );
+        card.style.setProperty("--x",`${x}px`);
+        card.style.setProperty("--y",`${y}px`);
 
     });
 
@@ -339,7 +202,7 @@ document.addEventListener("mousemove",(e)=>{
 
 
 /* =========================
-   PROFILE PARALLAX
+   PARALLAX PROFILE
 ========================= */
 
 const profile =
@@ -365,7 +228,7 @@ document.addEventListener("mousemove",(e)=>{
    LOADING EFFECT
 ========================= */
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", ()=>{
 
     document.body.classList.add("loaded");
 
@@ -379,18 +242,17 @@ window.addEventListener("load",()=>{
 const animatedCards =
 document.querySelectorAll(
 `
+.link-box,
 .slide-card,
-.youtube-card,
-.minecraft-card,
-.shop-card,
-.popular-card
+.content-card,
+.youtube-card
 `
 );
 
 animatedCards.forEach((card,index)=>{
 
     card.style.animationDelay =
-    `${index * 0.08}s`;
+    `${index * 0.1}s`;
 
 });
 
@@ -409,10 +271,10 @@ style.innerHTML = `
     position:absolute;
     width:20px;
     height:20px;
-    background:rgba(255,255,255,.45);
+    background:rgba(255,255,255,0.5);
     border-radius:50%;
     transform:translate(-50%,-50%);
-    animation:rippleEffect .7s linear;
+    animation:rippleEffect 0.7s linear;
     pointer-events:none;
 
 }
@@ -420,19 +282,15 @@ style.innerHTML = `
 @keyframes rippleEffect{
 
     from{
-
         width:0;
         height:0;
         opacity:1;
-
     }
 
     to{
-
         width:500px;
         height:500px;
         opacity:0;
-
     }
 
 }
@@ -441,7 +299,8 @@ style.innerHTML = `
 
     opacity:0;
     transform:translateY(40px);
-    transition:all 1s ease;
+    transition:
+    all 1s ease;
 
 }
 
