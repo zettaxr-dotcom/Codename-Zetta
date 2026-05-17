@@ -1,8 +1,22 @@
-@media(max-width:700px){
+@media screen and (max-width:700px){
+
+    *{
+        max-width:100%;
+    }
 
     body{
         overflow-x:hidden;
     }
+
+    .container,
+    .main-content,
+    .popular-section,
+    .section-box,
+    .category-section{
+        width:94%;
+    }
+
+    /* NAVBAR */
 
     .navbar{
         padding:14px;
@@ -19,6 +33,8 @@
         border-radius:14px;
         font-size:17px;
     }
+
+    /* HERO */
 
     .hero-section{
         padding-top:25px;
@@ -47,6 +63,8 @@
         margin-top:14px;
     }
 
+    /* SOCIAL */
+
     .social-links{
         gap:9px;
         margin-top:25px;
@@ -61,21 +79,29 @@
     /* GELOMBANG */
 
     .top-wave{
+        width:100%;
         height:70px;
-        margin-top:-25px;
-        border-radius:0 0 100% 100%;
+        background:#2d2d2d;
+        margin-top:-2px;
+        border-radius:100% 100% 0 0;
+        position:relative;
+        z-index:5;
     }
 
     .footer-wave{
+        width:100%;
         height:70px;
-        margin-top:-25px;
-        border-radius:0 0 100% 100%;
+        background:#1f1f1f;
+        margin-top:-2px;
+        border-radius:100% 100% 0 0;
+        position:relative;
+        z-index:8;
     }
 
     /* SECTION */
 
     .section-box{
-        margin-top:55px;
+        margin-top:50px;
     }
 
     .section-header h2{
@@ -90,28 +116,29 @@
     /* POPULAR */
 
     .popular-grid{
-        grid-template-columns:repeat(2,1fr);
+        display:grid;
+        grid-template-columns:1fr 1fr;
         gap:12px;
     }
 
     .popular-card{
-        border-radius:20px;
+        border-radius:18px;
     }
 
     .popular-card img{
-        height:150px;
+        height:140px;
     }
 
     .popular-info{
-        padding:12px;
+        padding:10px;
     }
 
     .popular-info h3{
-        font-size:14px;
+        font-size:13px;
     }
 
     .popular-info span{
-        font-size:11px;
+        font-size:10px;
     }
 
     /* CATEGORY */
@@ -124,11 +151,15 @@
         min-width:38px;
         height:38px;
         border-radius:12px;
-        font-size:16px;
+        font-size:15px;
+    }
+
+    .menu-buttons{
+        gap:10px;
     }
 
     .menu-buttons a{
-        padding:11px 18px;
+        padding:10px 16px;
         font-size:12px;
         border-radius:13px;
     }
@@ -140,33 +171,37 @@
     }
 
     .minecraft-card{
-        min-width:135px;
-        border-radius:20px;
+        min-width:130px;
+        border-radius:18px;
     }
 
     .minecraft-card span{
-        font-size:13px;
+        font-size:12px;
         left:10px;
         bottom:10px;
     }
 
     /* IKLAN */
 
+    .slider{
+        gap:12px;
+    }
+
     .slide-card{
-        min-width:260px;
-        border-radius:22px;
+        min-width:240px;
+        border-radius:20px;
     }
 
     .slide-card img{
-        height:165px;
+        height:150px;
     }
 
     .slide-info{
-        padding:14px;
+        padding:12px;
     }
 
     .slide-info h3{
-        font-size:16px;
+        font-size:15px;
     }
 
     .slide-info span{
@@ -176,8 +211,8 @@
     /* CONTENT */
 
     .youtube-card{
-        width:260px;
-        border-radius:20px;
+        width:240px;
+        border-radius:18px;
     }
 
     .content-title{
@@ -188,21 +223,22 @@
     /* SHOP */
 
     .shop-grid{
-        grid-template-columns:repeat(2,1fr);
+        display:grid;
+        grid-template-columns:1fr 1fr;
         gap:10px;
     }
 
     .shop-card{
-        border-radius:18px;
+        border-radius:16px;
     }
 
     /* POPUP */
 
     .search-popup{
         width:210px;
-        right:60px;
-        top:70px;
-        border-radius:18px;
+        right:58px;
+        top:68px;
+        border-radius:16px;
         padding:12px;
     }
 
@@ -218,9 +254,9 @@
 
     .menu-popup{
         width:190px;
-        top:70px;
-        border-radius:18px;
-        padding:15px;
+        top:68px;
+        border-radius:16px;
+        padding:14px;
     }
 
     .menu-popup a{
@@ -230,17 +266,17 @@
     /* FOOTER */
 
     .footer{
-        padding:50px 18px;
+        padding:45px 18px;
     }
 
     .footer-logo{
-        width:65px;
+        width:62px;
     }
 
     .footer-description{
         font-size:12px;
-        line-height:1.9;
-        margin-top:18px;
+        line-height:1.8;
+        margin-top:16px;
     }
 
 }
