@@ -7,7 +7,7 @@
 
 <title>Codename : Zetta</title>
 
-<link rel="stylesheet" href="./style.css?v=9">
+<link rel="stylesheet" href="./style.css?v=10">
 
 </head>
 
@@ -76,9 +76,20 @@
 
     </div>
 
+    <!-- BUTTON MENU -->
+
+    <div class="menu-buttons">
+
+        <a href="#minecraft">Minecraft</a>
+        <a href="#popular">Popular</a>
+        <a href="#content">Content</a>
+        <a href="#shop">Shop</a>
+
+    </div>
+
     <!-- MINECRAFT -->
 
-    <div class="section-title">
+    <div class="section-title" id="minecraft">
         ⛏️ Minecraft
     </div>
 
@@ -103,7 +114,7 @@
 
     <!-- POPULAR -->
 
-    <div class="section-title">
+    <div class="section-title" id="popular">
         🔥 Popular
     </div>
 
@@ -139,7 +150,7 @@
 
     <div class="content-wrapper">
 
-        <div class="content-slider">
+        <div class="content-slider" id="contentSlider">
 
             <a href="#" class="youtube-card">
                 <img src="content1.jpg">
@@ -239,6 +250,48 @@ setInterval(() => {
     }
 
 },3000);
+
+/* CONTENT DRAG */
+
+const contentSlider = document.getElementById("contentSlider");
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+contentSlider.addEventListener("mousedown",(e)=>{
+
+    isDown = true;
+    startX = e.pageX - contentSlider.offsetLeft;
+    scrollLeft = contentSlider.scrollLeft;
+
+});
+
+contentSlider.addEventListener("mouseleave",()=>{
+
+    isDown = false;
+
+});
+
+contentSlider.addEventListener("mouseup",()=>{
+
+    isDown = false;
+
+});
+
+contentSlider.addEventListener("mousemove",(e)=>{
+
+    if(!isDown) return;
+
+    e.preventDefault();
+
+    const x = e.pageX - contentSlider.offsetLeft;
+
+    const walk = (x - startX) * 2;
+
+    contentSlider.scrollLeft = scrollLeft - walk;
+
+});
 
 </script>
 
