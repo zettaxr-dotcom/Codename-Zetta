@@ -1,280 +1,525 @@
-<!-- POPULAR SEKARANG -->
+<!DOCTYPE html>
+<html lang="id">
 
-<section class="section-box" id="popular">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="section-header">
+<title>Codename : Zetta</title>
 
-        <h2>🔥 Popular Sekarang</h2>
+<link rel="stylesheet" href="./style.css?v=20">
 
-        <p>
-            Content trending pilihan paling ramai dan banyak dipakai user.
-        </p>
+</head>
+
+<body>
+
+<!-- BACKGROUND VIDEO -->
+
+<div class="video-container">
+
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+</div>
+
+<div class="overlay"></div>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="nav-logo">
+        <img src="logo.png">
+    </div>
+
+    <div class="nav-right">
+
+        <button class="nav-btn">
+            🔍
+        </button>
+
+        <button class="nav-btn">
+            ☰
+        </button>
 
     </div>
 
-    <div class="popular-grid">
+</header>
 
-        <a href="#" class="popular-card">
+<!-- MAIN -->
 
-            <img src="content1.jpg">
+<div class="container">
 
-            <div class="popular-title">
-                Shader Realistic RTX
+    <!-- HERO -->
+
+    <section class="hero-section">
+
+        <img src="profile.png" class="profile-img">
+
+        <h1 class="hero-title">
+            Codename : Zetta
+        </h1>
+
+        <div class="hero-subtitle">
+            The True Dragon
+        </div>
+
+        <div class="hero-description">
+            Website Minecraft Modpack, Shader, Texturepack Java & Bedrock Edition dengan visual modern dan cinematic experience.
+        </div>
+
+        <!-- MEDIA -->
+
+        <div class="social-links">
+
+            <a href="https://youtube.com/@zettaxr?si=PUA5OJtLotW2Kcby" class="social-card">
+                <img src="media1.jpg">
+            </a>
+
+            <a href="https://www.tiktok.com/@zetta.xr?_r=1&_t=ZS-96N0pVPzRXY" class="social-card">
+                <img src="media2.jpg">
+            </a>
+
+            <a href="https://whatsapp.com/channel/0029Vb7WE39GzzKOH94qKL2l" class="social-card">
+                <img src="media3.jpg">
+            </a>
+
+            <a href="https://x.com/XrZetta38115" class="social-card">
+                <img src="media4.jpg">
+            </a>
+
+            <a href="https://t.me/+SlZzelxT6CAzZjJl" class="social-card">
+                <img src="media5.jpg">
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- WAVE -->
+
+<div class="top-wave"></div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <!-- CATEGORY -->
+
+    <div class="category-section">
+
+        <div class="category-title">
+            Category
+        </div>
+
+        <div class="menu-scroll">
+
+            <button class="scroll-btn" id="scrollLeft">
+                <
+            </button>
+
+            <div class="menu-buttons" id="menuButtons">
+
+                <a href="#minecraft">Minecraft</a>
+                <a href="#hot">Hot</a>
+                <a href="#content">Content</a>
+                <a href="shop.html">Shop</a>
+
             </div>
 
-        </a>
+            <button class="scroll-btn" id="scrollRight">
+                >
+            </button>
 
-        <a href="#" class="popular-card">
-
-            <img src="content2.jpg">
-
-            <div class="popular-title">
-                Modpack Hardcore
-            </div>
-
-        </a>
-
-        <a href="#" class="popular-card">
-
-            <img src="content3.jpg">
-
-            <div class="popular-title">
-                Texturepack 64x
-            </div>
-
-        </a>
-
-        <a href="#" class="popular-card">
-
-            <img src="content4.jpg">
-
-            <div class="popular-title">
-                Ultra Cinematic
-            </div>
-
-        </a>
+        </div>
 
     </div>
 
-</section>
+    <!-- MINECRAFT -->
 
-<!-- CONTENT -->
+    <section class="section-box" id="minecraft">
 
-<section class="section-box" id="content">
+        <div class="section-header">
 
-    <div class="section-header">
+            <h2>⛏ Minecraft</h2>
 
-        <h2>🎬 Content</h2>
+            <p>
+                Modpack, shader, dan texture terbaik untuk Java & Bedrock Edition.
+            </p>
 
-        <p>
-            Showcase video, gameplay, dan update terbaru dari Zetta.
-        </p>
+        </div>
+
+        <div class="minecraft-scroll">
+
+            <a href="mps.html" class="minecraft-card">
+
+                <img src="modpack1.jpg">
+
+                <span>Modpack</span>
+
+            </a>
+
+            <a href="shader1.html" class="minecraft-card">
+
+                <img src="shader1.jpg">
+
+                <span>Shader</span>
+
+            </a>
+
+            <a href="texture1.html" class="minecraft-card">
+
+                <img src="texture1.jpg">
+
+                <span>Texture</span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- IKLAN -->
+
+    <section class="section-box" id="hot">
+
+        <div class="section-header">
+
+            <h2>📢 Iklan</h2>
+
+            <p>
+                Update terbaru, promosi, dan informasi penting dari Codename Zetta.
+            </p>
+
+        </div>
+
+        <div class="slider" id="autoSlider">
+
+            <a href="#" class="slide-card">
+
+                <img src="promo1.jpg">
+
+                <div class="slide-info">
+
+                    <h3>Overhoul Remastered</h3>
+
+                    <span>
+                        Shader cinematic ultra realistic.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="slide-card">
+
+                <img src="promo2.jpg">
+
+                <div class="slide-info">
+
+                    <h3>Coming Soon</h3>
+
+                    <span>
+                        New content update.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="slide-card">
+
+                <img src="promo3.jpg">
+
+                <div class="slide-info">
+
+                    <h3>Coming Soon</h3>
+
+                    <span>
+                        Exclusive release soon.
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+
+    <section class="section-box" id="content">
+
+        <div class="section-header">
+
+            <h2>🎬 Content</h2>
+
+            <p>
+                Showcase video, gameplay, dan update terbaru dari Zetta.
+            </p>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input type="text" placeholder="Cari content...">
+
+        </div>
+
+        <!-- CONTENT SLIDER -->
+
+        <div class="content-wrapper">
+
+            <div class="content-slider" id="contentSlider">
+
+                <a href="#" class="youtube-card">
+
+                    <img src="content1.jpg">
+
+                    <div class="content-title">
+                        Showcase Shader Realistic
+                    </div>
+
+                </a>
+
+                <a href="#" class="youtube-card">
+
+                    <img src="content2.jpg">
+
+                    <div class="content-title">
+                        Survival Modpack 100 Days
+                    </div>
+
+                </a>
+
+                <a href="#" class="youtube-card">
+
+                    <img src="content3.jpg">
+
+                    <div class="content-title">
+                        Texturepack FPS Boost
+                    </div>
+
+                </a>
+
+                <a href="#" class="youtube-card">
+
+                    <img src="content4.jpg">
+
+                    <div class="content-title">
+                        Best Cinematic Shader
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SHOP -->
+
+    <section class="section-box" id="shop">
+
+        <div class="section-header">
+
+            <h2>🏛 Shop</h2>
+
+            <p>
+                Premium content dan exclusive pack pilihan dari Zetta.
+            </p>
+
+        </div>
+
+        <div class="shop-grid">
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop1.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop2.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop3.jpg">
+            </a>
+
+            <a href="shop.html" class="shop-card">
+                <img src="shop4.jpg">
+            </a>
+
+        </div>
+
+        <div class="more-section">
+
+            <button class="page-btn">
+                <
+            </button>
+
+            <span class="more-text">
+                Lainnya
+            </span>
+
+            <button class="page-btn">
+                >
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+<!-- FOOTER WAVE -->
+
+<div class="footer-wave"></div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-bg"></div>
+
+    <img src="profile.png" class="footer-logo">
+
+    <div class="footer-description">
+
+        Codename : Zetta merupakan website Minecraft Java & Bedrock Edition yang menyediakan modpack, shader, texturepack, content, dan update terbaru dengan tampilan modern gaming aesthetic.
 
     </div>
 
-    <!-- SEARCH -->
+    <div class="footer-menu">
 
-    <div class="search-box">
+        <div class="footer-column">
 
-        <input
-        type="text"
-        id="searchInput"
-        placeholder="Cari content...">
+            <h3>Peta Situs</h3>
 
-    </div>
+            <a href="#">Beranda</a>
+            <a href="#minecraft">Minecraft</a>
+            <a href="#content">Content</a>
+            <a href="shop.html">Shop</a>
 
-    <!-- CONTENT GRID -->
+        </div>
 
-    <div class="content-grid" id="contentGrid">
+        <div class="footer-column">
 
-        <a href="#" class="youtube-card">
+            <h3>Support</h3>
 
-            <img src="content1.jpg">
+            <a href="#">Telegram</a>
+            <a href="#">Whatsapp</a>
+            <a href="#">Discord</a>
 
-            <div class="content-title">
-                Showcase Shader Realistic
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content2.jpg">
-
-            <div class="content-title">
-                Survival Modpack 100 Days
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content3.jpg">
-
-            <div class="content-title">
-                Texturepack FPS Boost
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content4.jpg">
-
-            <div class="content-title">
-                Best Cinematic Shader
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content1.jpg">
-
-            <div class="content-title">
-                Shader Java Extreme
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content2.jpg">
-
-            <div class="content-title">
-                Minecraft Horror Pack
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content3.jpg">
-
-            <div class="content-title">
-                Realistic Water Shader
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content4.jpg">
-
-            <div class="content-title">
-                RTX Texture Bedrock
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content1.jpg">
-
-            <div class="content-title">
-                Best PvP Texture
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content2.jpg">
-
-            <div class="content-title">
-                Survival Realistic
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content3.jpg">
-
-            <div class="content-title">
-                Anime Texturepack
-            </div>
-
-        </a>
-
-        <a href="#" class="youtube-card">
-
-            <img src="content4.jpg">
-
-            <div class="content-title">
-                Dragon Cinematic Pack
-            </div>
-
-        </a>
+        </div>
 
     </div>
 
-</section>
+</footer>
 
-<!-- SHOP -->
+<!-- SCRIPT -->
 
-<section class="section-box" id="shop">
+<script>
 
-    <div class="section-header">
+/* AUTO IKLAN */
 
-        <h2>🏛 Shop</h2>
+const slider = document.getElementById("autoSlider");
 
-        <p>
-            Premium content dan exclusive pack pilihan dari Zetta.
-        </p>
+let scrollAmount = 0;
 
-    </div>
+setInterval(() => {
 
-    <div class="shop-grid">
+    slider.scrollBy({
+        left:340,
+        behavior:"smooth"
+    });
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop1.jpg">
-        </a>
+    scrollAmount += 340;
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop2.jpg">
-        </a>
+    if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop3.jpg">
-        </a>
+        slider.scrollTo({
+            left:0,
+            behavior:"smooth"
+        });
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop4.jpg">
-        </a>
+        scrollAmount = 0;
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop1.jpg">
-        </a>
+    }
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop2.jpg">
-        </a>
+},4000);
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop3.jpg">
-        </a>
+/* CONTENT DRAG */
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop4.jpg">
-        </a>
+const contentSlider = document.getElementById("contentSlider");
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop1.jpg">
-        </a>
+let isDown = false;
+let startX;
+let scrollLeft;
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop2.jpg">
-        </a>
+contentSlider.addEventListener("mousedown",(e)=>{
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop3.jpg">
-        </a>
+    isDown = true;
+    startX = e.pageX - contentSlider.offsetLeft;
+    scrollLeft = contentSlider.scrollLeft;
 
-        <a href="shop.html" class="shop-card">
-            <img src="shop4.jpg">
-        </a>
+});
 
-    </div>
+contentSlider.addEventListener("mouseleave",()=>{
 
-</section>
+    isDown = false;
+
+});
+
+contentSlider.addEventListener("mouseup",()=>{
+
+    isDown = false;
+
+});
+
+contentSlider.addEventListener("mousemove",(e)=>{
+
+    if(!isDown) return;
+
+    e.preventDefault();
+
+    const x = e.pageX - contentSlider.offsetLeft;
+
+    const walk = (x - startX) * 2;
+
+    contentSlider.scrollLeft = scrollLeft - walk;
+
+});
+
+/* CATEGORY SCROLL */
+
+const menuButtons = document.getElementById("menuButtons");
+
+document.getElementById("scrollRight").onclick = () => {
+
+    menuButtons.scrollBy({
+        left:200,
+        behavior:"smooth"
+    });
+
+};
+
+document.getElementById("scrollLeft").onclick = () => {
+
+    menuButtons.scrollBy({
+        left:-200,
+        behavior:"smooth"
+    });
+
+};
+
+</script>
+
+</body>
+</html>
