@@ -7,7 +7,7 @@
 
 <title>Codename : Zetta</title>
 
-<link rel="stylesheet" href="./style.css?v=8">
+<link rel="stylesheet" href="./style.css?v=9">
 
 </head>
 
@@ -76,15 +76,28 @@
 
     </div>
 
-    <!-- MENU -->
+    <!-- MINECRAFT -->
 
-    <div class="menu-buttons">
+    <div class="section-title">
+        ⛏️ Minecraft
+    </div>
 
-        <a href="#modpacks">Modpacks</a>
-        <a href="#shaderpacks">Shaders</a>
-        <a href="#texturepacks">Textures</a>
-        <a href="#content">Content</a>
-        <a href="#shop">Shop</a>
+    <div class="category-grid">
+
+        <a href="mps.html" class="category-card">
+            <img src="modpack1.jpg">
+            <span>Modpack</span>
+        </a>
+
+        <a href="shader1.html" class="category-card">
+            <img src="shader1.jpg">
+            <span>Shader</span>
+        </a>
+
+        <a href="texture1.html" class="category-card">
+            <img src="texture1.jpg">
+            <span>Texture</span>
+        </a>
 
     </div>
 
@@ -118,66 +131,41 @@
 
     </div>
 
-    <!-- CATEGORY -->
-
-    <div class="category-grid">
-
-        <a href="mps.html" class="category-card">
-            <img src="modpack1.jpg">
-            <span>Modpack</span>
-        </a>
-
-        <a href="shader1.html" class="category-card">
-            <img src="shader1.jpg">
-            <span>Shader</span>
-        </a>
-
-        <a href="texture1.html" class="category-card">
-            <img src="texture1.jpg">
-            <span>Texture</span>
-        </a>
-
-    </div>
-
     <!-- CONTENT -->
 
     <div class="section-title" id="content">
         🎥 Content
     </div>
 
-    <div class="content-slider">
+    <div class="content-wrapper">
 
-        <a href="#" class="youtube-card">
-            <img src="content1.jpg">
-        </a>
+        <div class="content-slider">
 
-        <a href="#" class="youtube-card">
-            <img src="content2.jpg">
-        </a>
+            <a href="#" class="youtube-card">
+                <img src="content1.jpg">
+            </a>
 
-    </div>
+            <a href="#" class="youtube-card">
+                <img src="content2.jpg">
+            </a>
 
-    <button class="show-more-btn" onclick="toggleContent()">
-        Tampilkan Lainnya...
-    </button>
+            <a href="#" class="youtube-card">
+                <img src="content3.jpg">
+            </a>
 
-    <div class="content-slider hidden-content" id="moreContent">
+            <a href="#" class="youtube-card">
+                <img src="content4.jpg">
+            </a>
 
-        <a href="#" class="youtube-card">
-            <img src="content3.jpg">
-        </a>
+            <a href="#" class="youtube-card">
+                <img src="content5.jpg">
+            </a>
 
-        <a href="#" class="youtube-card">
-            <img src="content4.jpg">
-        </a>
+            <a href="#" class="youtube-card">
+                <img src="content6.jpg">
+            </a>
 
-        <a href="#" class="youtube-card">
-            <img src="content5.jpg">
-        </a>
-
-        <a href="#" class="youtube-card">
-            <img src="content6.jpg">
-        </a>
+        </div>
 
     </div>
 
@@ -224,44 +212,29 @@
 
 <script>
 
-/* SHOW MORE */
-
-function toggleContent(){
-
-    const moreContent = document.getElementById("moreContent");
-
-    if(moreContent.style.display === "flex"){
-
-        moreContent.style.display = "none";
-
-    }else{
-
-        moreContent.style.display = "flex";
-
-    }
-
-}
-
-/* AUTO SLIDER */
+/* AUTO POPULAR */
 
 const slider = document.getElementById("autoSlider");
+
+let scrollAmount = 0;
 
 setInterval(() => {
 
     slider.scrollBy({
-        left:320,
+        left:340,
         behavior:"smooth"
     });
 
-    if(
-        slider.scrollLeft + slider.clientWidth
-        >= slider.scrollWidth - 5
-    ){
+    scrollAmount += 340;
+
+    if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
 
         slider.scrollTo({
             left:0,
             behavior:"smooth"
         });
+
+        scrollAmount = 0;
 
     }
 
