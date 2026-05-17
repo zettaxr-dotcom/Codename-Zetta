@@ -7,7 +7,7 @@
 
 <title>Codename : Zetta</title>
 
-<link rel="stylesheet" href="./style.css?v=7">
+<link rel="stylesheet" href="./style.css?v=8">
 
 </head>
 
@@ -16,11 +16,9 @@
 <!-- VIDEO BACKGROUND -->
 
 <div class="video-container">
-
     <video autoplay muted loop playsinline class="bg-video">
         <source src="background.mp4" type="video/mp4">
     </video>
-
 </div>
 
 <div class="overlay"></div>
@@ -83,24 +81,24 @@
     <div class="menu-buttons">
 
         <a href="#modpacks">Modpacks</a>
-
         <a href="#shaderpacks">Shaders</a>
-
         <a href="#texturepacks">Textures</a>
+        <a href="#content">Content</a>
+        <a href="#shop">Shop</a>
 
     </div>
 
     <!-- POPULAR -->
 
-    <div class="section-title" id="promotion">
+    <div class="section-title">
         🔥 Popular
     </div>
 
-    <div class="slider">
+    <div class="slider" id="autoSlider">
 
-        <a href="https://www.mediafire.com/file/v3c30c8siu92ccu/Derivative_%25E2%2580%2594_Overhoul_%255BRevamp%255D.zip/file" class="slide-card">
+        <a href="#" class="slide-card">
             <img src="promo1.jpg">
-            <p>Derivative — Overhoul Remastered</p>
+            <p>Derivative Overhoul</p>
         </a>
 
         <a href="#" class="slide-card">
@@ -110,6 +108,11 @@
 
         <a href="#" class="slide-card">
             <img src="promo3.jpg">
+            <p>Coming Soon</p>
+        </a>
+
+        <a href="#" class="slide-card">
+            <img src="promo4.jpg">
             <p>Coming Soon</p>
         </a>
 
@@ -142,18 +145,14 @@
         🎥 Content
     </div>
 
-    <div class="shop-grid">
+    <div class="content-slider">
 
-        <a href="#" class="shop-card">
+        <a href="#" class="youtube-card">
             <img src="content1.jpg">
         </a>
 
-        <a href="#" class="shop-card">
+        <a href="#" class="youtube-card">
             <img src="content2.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="content3.jpg">
         </a>
 
     </div>
@@ -162,17 +161,21 @@
         Tampilkan Lainnya...
     </button>
 
-    <div class="shop-grid hidden-content" id="moreContent">
+    <div class="content-slider hidden-content" id="moreContent">
 
-        <a href="#" class="shop-card">
+        <a href="#" class="youtube-card">
+            <img src="content3.jpg">
+        </a>
+
+        <a href="#" class="youtube-card">
             <img src="content4.jpg">
         </a>
 
-        <a href="#" class="shop-card">
+        <a href="#" class="youtube-card">
             <img src="content5.jpg">
         </a>
 
-        <a href="#" class="shop-card">
+        <a href="#" class="youtube-card">
             <img src="content6.jpg">
         </a>
 
@@ -180,35 +183,24 @@
 
     <!-- SHOP -->
 
-    <div class="section-title">
+    <div class="section-title" id="shop">
         🏛️ Shop
     </div>
 
     <div class="shop-grid">
 
-        <a href="#" class="shop-card">
-            <img src="shop1.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop2.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop3.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop4.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop5.jpg">
-        </a>
-
-        <a href="#" class="shop-card">
-            <img src="shop6.jpg">
-        </a>
+        <a href="#" class="shop-card"><img src="shop1.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop2.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop3.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop4.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop5.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop6.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop7.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop8.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop9.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop10.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop11.jpg"></a>
+        <a href="#" class="shop-card"><img src="shop12.jpg"></a>
 
     </div>
 
@@ -232,21 +224,48 @@
 
 <script>
 
+/* SHOW MORE */
+
 function toggleContent(){
 
     const moreContent = document.getElementById("moreContent");
 
-    if(moreContent.style.display === "grid"){
+    if(moreContent.style.display === "flex"){
 
         moreContent.style.display = "none";
 
     }else{
 
-        moreContent.style.display = "grid";
+        moreContent.style.display = "flex";
 
     }
 
 }
+
+/* AUTO SLIDER */
+
+const slider = document.getElementById("autoSlider");
+
+setInterval(() => {
+
+    slider.scrollBy({
+        left:320,
+        behavior:"smooth"
+    });
+
+    if(
+        slider.scrollLeft + slider.clientWidth
+        >= slider.scrollWidth - 5
+    ){
+
+        slider.scrollTo({
+            left:0,
+            behavior:"smooth"
+        });
+
+    }
+
+},3000);
 
 </script>
 
