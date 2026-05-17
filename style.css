@@ -31,7 +31,7 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
-    filter:blur(8px) brightness(0.22);
+    filter:blur(8px) brightness(0.20);
     transform:scale(1.1);
 }
 
@@ -61,12 +61,12 @@ body{
 }
 
 .profile-img{
-    width:115px;
-    height:115px;
+    width:110px;
+    height:110px;
     border-radius:50%;
     object-fit:cover;
     border:3px solid rgba(255,255,255,0.15);
-    box-shadow:0 0 35px rgba(255,255,255,0.08);
+    box-shadow:0 0 30px rgba(255,255,255,0.08);
 }
 
 .title{
@@ -95,7 +95,7 @@ body{
     display:flex;
     justify-content:center;
     gap:10px;
-    margin-top:32px;
+    margin-top:30px;
     overflow-x:auto;
     padding-bottom:10px;
 }
@@ -108,12 +108,12 @@ body{
     text-decoration:none;
     color:white;
     text-align:center;
-    min-width:62px;
+    min-width:60px;
 }
 
 .link-box img{
-    width:62px;
-    height:62px;
+    width:60px;
+    height:60px;
     border-radius:16px;
     object-fit:cover;
     transition:.3s;
@@ -257,14 +257,16 @@ body{
     font-size:15px;
     font-weight:700;
     color:white;
-    text-shadow:0 0 10px rgba(0,0,0,0.6);
+    text-shadow:0 0 10px rgba(0,0,0,0.7);
 }
 
 /* CONTENT */
 
 .content-wrapper{
+    width:100%;
     overflow-x:auto;
     padding-bottom:10px;
+    cursor:grab;
 }
 
 .content-wrapper::-webkit-scrollbar{
@@ -278,11 +280,10 @@ body{
 }
 
 .youtube-card{
-    width:370px;
+    width:380px;
     overflow:hidden;
     border-radius:22px;
     text-decoration:none;
-    color:white;
     background:rgba(255,255,255,0.05);
     border:1px solid rgba(255,255,255,0.08);
     flex-shrink:0;
@@ -298,12 +299,6 @@ body{
     aspect-ratio:16/9;
     object-fit:cover;
     display:block;
-}
-
-.youtube-card p{
-    padding:13px;
-    font-weight:700;
-    font-size:14px;
 }
 
 /* SHOP */
@@ -337,33 +332,6 @@ body{
 
 .shop-card:hover img{
     transform:scale(1.05);
-}
-
-/* BUTTON */
-
-.show-more-btn{
-    width:100%;
-    margin-top:20px;
-    padding:15px;
-    border:none;
-    border-radius:18px;
-    background:rgba(255,255,255,0.07);
-    color:white;
-    font-size:15px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.show-more-btn:hover{
-    background:#ff3b3b;
-}
-
-/* HIDDEN */
-
-.hidden-content{
-    display:none;
-    margin-top:14px;
 }
 
 /* FOOTER */
@@ -446,11 +414,11 @@ footer{
     }
 
     .slide-card{
-        min-width:285px;
+        min-width:280px;
     }
 
     .slide-card img{
-        height:170px;
+        height:165px;
     }
 
     .category-grid{
@@ -459,13 +427,13 @@ footer{
     }
 
     .category-card span{
-        font-size:11px;
+        font-size:10px;
         left:7px;
         bottom:7px;
     }
 
     .youtube-card{
-        width:300px;
+        width:320px;
     }
 
     .shop-grid{
