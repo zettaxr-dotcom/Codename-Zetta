@@ -2,10 +2,10 @@
 
 .top-wave{
     width:100%;
-    height:120px;
-    background:#2d2d2d;
-    margin-top:-40px;
-    border-radius:0 0 50% 50%;
+    height:90px;
+    background:#2b2b2b;
+    margin-top:-30px;
+    border-radius:50% 50% 0 0;
     position:relative;
     z-index:5;
 }
@@ -14,23 +14,23 @@
 
 .main-content{
     position:relative;
-    background:#2d2d2d;
-    padding:20px 0 100px;
+    background:#2b2b2b;
+    padding:30px 0 100px;
     z-index:6;
     color:white;
     overflow:hidden;
 }
 
-/* BG VIDEO BLUR BAWAH */
+/* BG BLUR */
 
 .main-content::before{
     content:"";
     position:absolute;
     inset:0;
-    background:url("background.jpg") center/cover;
-    filter:blur(18px) brightness(.35);
+    background:url("background.jpg") center/cover no-repeat;
+    filter:blur(20px) brightness(.25);
     transform:scale(1.2);
-    opacity:.45;
+    opacity:.4;
     z-index:-2;
 }
 
@@ -38,31 +38,30 @@
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(25,25,25,.82);
+    background:rgba(20,20,20,.78);
     z-index:-1;
 }
 
 /* NAVBAR */
 
 .navbar{
-    position:sticky;
+    position:fixed;
     top:0;
-    z-index:999;
+    left:0;
     width:100%;
-    padding:16px 22px;
+    z-index:9999;
+    padding:14px 20px;
     display:flex;
     align-items:center;
-    justify-content:flex-start;
-    gap:14px;
-    backdrop-filter:blur(14px);
     background:rgba(0,0,0,.35);
+    backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(255,255,255,.05);
 }
 
 .nav-logo{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:12px;
 }
 
 .nav-logo img{
@@ -72,11 +71,42 @@
     object-fit:cover;
 }
 
-.nav-logo::after{
-    content:"Codename : Zetta";
+.logo-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo-text h2{
     color:white;
-    font-size:20px;
+    font-size:19px;
     font-weight:700;
+    line-height:1;
+}
+
+.logo-text span{
+    color:#c9c9c9;
+    font-size:12px;
+    margin-top:4px;
+}
+
+/* HERO */
+
+.hero-section{
+    padding-top:120px;
+    padding-bottom:90px;
+    text-align:center;
+}
+
+.hero-title{
+    color:white;
+}
+
+.hero-subtitle{
+    color:#d8d8d8;
+}
+
+.hero-description{
+    color:#cfcfcf;
 }
 
 /* POPULAR */
@@ -103,6 +133,7 @@
     text-decoration:none;
     color:white;
     position:relative;
+    flex-shrink:0;
 }
 
 .popular-card:hover{
@@ -196,10 +227,27 @@
 .slide-card{
     min-width:340px;
     flex-shrink:0;
+    border-radius:24px;
+    overflow:hidden;
     background:#252525;
     border:1px solid rgba(255,255,255,.06);
     color:white;
     box-shadow:none;
+}
+
+.slide-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.slide-info{
+    padding:16px;
+}
+
+.slide-info h3{
+    font-size:20px;
+    margin-bottom:6px;
 }
 
 .slide-info span{
@@ -215,6 +263,10 @@
     box-shadow:none;
 }
 
+.content-info h3{
+    color:white;
+}
+
 .content-info p{
     color:#c8c8c8;
 }
@@ -225,4 +277,78 @@
     background:#252525;
     border:1px solid rgba(255,255,255,.06);
     box-shadow:none;
+}
+
+/* FOOTER */
+
+.footer{
+    position:relative;
+    overflow:hidden;
+    padding:70px 20px;
+    background:#111;
+}
+
+.footer-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:blur(18px) brightness(.22);
+    transform:scale(1.2);
+}
+
+.footer-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.72);
+}
+
+.footer-logo,
+.footer-description{
+    position:relative;
+    z-index:2;
+}
+
+.footer-logo{
+    width:85px;
+    border-radius:24px;
+}
+
+.footer-description{
+    margin-top:20px;
+    color:#d0d0d0;
+    line-height:1.9;
+    max-width:700px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .hero-title{
+        font-size:38px;
+    }
+
+    .section-header h2{
+        font-size:30px;
+    }
+
+    .popular-card{
+        min-width:220px;
+    }
+
+    .slide-card{
+        min-width:290px;
+    }
+
+    .nav-logo img{
+        width:46px;
+        height:46px;
+    }
+
+    .logo-text h2{
+        font-size:16px;
+    }
+
 }
