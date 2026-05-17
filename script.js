@@ -5,45 +5,150 @@
 
 
 /* =========================
-   AUTO SLIDER
+   AUTO IKLAN SLIDER
 ========================= */
 
-const slider = document.getElementById("slider");
+const slider = document.getElementById("autoSlider");
 
-let scrollAmount = 0;
+let autoScroll = 0;
 
 function autoSlide(){
 
     if(!slider) return;
 
-    scrollAmount += 1;
+    autoScroll += 1;
 
-    slider.scrollLeft = scrollAmount;
+    slider.scrollLeft = autoScroll;
 
-    if(scrollAmount >= slider.scrollWidth - slider.clientWidth){
-        scrollAmount = 0;
+    if(
+        autoScroll >=
+        slider.scrollWidth - slider.clientWidth
+    ){
+
+        autoScroll = 0;
+
     }
 
 }
 
-setInterval(autoSlide, 20);
+setInterval(autoSlide, 15);
 
 
 /* =========================
-   CLICK ANIMATION
+   CONTENT DRAG SCROLL
+========================= */
+
+const contentSlider =
+document.getElementById("contentSlider");
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+if(contentSlider){
+
+    contentSlider.addEventListener("mousedown",(e)=>{
+
+        isDown = true;
+
+        startX =
+        e.pageX - contentSlider.offsetLeft;
+
+        scrollLeft =
+        contentSlider.scrollLeft;
+
+    });
+
+    contentSlider.addEventListener("mouseleave",()=>{
+
+        isDown = false;
+
+    });
+
+    contentSlider.addEventListener("mouseup",()=>{
+
+        isDown = false;
+
+    });
+
+    contentSlider.addEventListener("mousemove",(e)=>{
+
+        if(!isDown) return;
+
+        e.preventDefault();
+
+        const x =
+        e.pageX - contentSlider.offsetLeft;
+
+        const walk =
+        (x - startX) * 2;
+
+        contentSlider.scrollLeft =
+        scrollLeft - walk;
+
+    });
+
+}
+
+
+/* =========================
+   CATEGORY BUTTON SCROLL
+========================= */
+
+const menuButtons =
+document.getElementById("menuButtons");
+
+const scrollRight =
+document.getElementById("scrollRight");
+
+const scrollLeftBtn =
+document.getElementById("scrollLeft");
+
+if(scrollRight){
+
+    scrollRight.onclick = () => {
+
+        menuButtons.scrollBy({
+
+            left:220,
+            behavior:"smooth"
+
+        });
+
+    };
+
+}
+
+if(scrollLeftBtn){
+
+    scrollLeftBtn.onclick = () => {
+
+        menuButtons.scrollBy({
+
+            left:-220,
+            behavior:"smooth"
+
+        });
+
+    };
+
+}
+
+
+/* =========================
+   CLICK RIPPLE EFFECT
 ========================= */
 
 const buttons = document.querySelectorAll(
 `
 a,
 button,
-.link-box,
-.content-card,
 .slide-card,
 .youtube-card,
 .social-card,
 .minecraft-card,
-.shop-card
+.shop-card,
+.popular-card
 `
 );
 
@@ -54,11 +159,13 @@ buttons.forEach(button => {
 
     button.addEventListener("click", function(e){
 
-        const ripple = document.createElement("span");
+        const ripple =
+        document.createElement("span");
 
         ripple.classList.add("ripple");
 
-        const rect = button.getBoundingClientRect();
+        const rect =
+        button.getBoundingClientRect();
 
         ripple.style.left =
         e.clientX - rect.left + "px";
@@ -69,8 +176,10 @@ buttons.forEach(button => {
         button.appendChild(ripple);
 
         setTimeout(() => {
+
             ripple.remove();
-        }, 700);
+
+        },700);
 
     });
 
@@ -84,18 +193,18 @@ buttons.forEach(button => {
 const hiddenElements =
 document.querySelectorAll(
 `
-.link-box,
 .slide-card,
-.content-card,
 .youtube-card,
 .menu-buttons a,
 .minecraft-card,
 .shop-card,
-.social-card
+.social-card,
+.popular-card
 `
 );
 
-const observer = new IntersectionObserver((entries)=>{
+const observer =
+new IntersectionObserver((entries)=>{
 
     entries.forEach((entry)=>{
 
@@ -108,7 +217,7 @@ const observer = new IntersectionObserver((entries)=>{
     });
 
 },{
-    threshold:0.1
+    threshold:0.12
 });
 
 hiddenElements.forEach((el)=>{
@@ -116,33 +225,6 @@ hiddenElements.forEach((el)=>{
     el.classList.add("hidden");
 
     observer.observe(el);
-
-});
-
-
-/* =========================
-   HOVER EFFECT
-========================= */
-
-const hoverItems = document.querySelectorAll(
-`
-.link-box,
-.content-card,
-.slide-card,
-.youtube-card,
-.minecraft-card,
-.shop-card
-`
-);
-
-hoverItems.forEach(item => {
-
-    item.addEventListener("mouseenter", ()=>{
-
-        item.style.transition =
-        "all 0.35s ease";
-
-    });
 
 });
 
@@ -180,7 +262,7 @@ document.querySelectorAll('a[href^="#"]')
 
 
 /* =========================
-   GLOW EFFECT ON MOVE
+   GLOW EFFECT
 ========================= */
 
 document.addEventListener("mousemove",(e)=>{
@@ -188,12 +270,11 @@ document.addEventListener("mousemove",(e)=>{
     const cards =
     document.querySelectorAll(
     `
-    .link-box,
-    .content-card,
     .slide-card,
     .youtube-card,
     .minecraft-card,
-    .shop-card
+    .shop-card,
+    .popular-card
     `
     );
 
@@ -208,8 +289,15 @@ document.addEventListener("mousemove",(e)=>{
         const y =
         e.clientY - rect.top;
 
-        card.style.setProperty("--x",`${x}px`);
-        card.style.setProperty("--y",`${y}px`);
+        card.style.setProperty(
+            "--x",
+            `${x}px`
+        );
+
+        card.style.setProperty(
+            "--y",
+            `${y}px`
+        );
 
     });
 
@@ -217,7 +305,7 @@ document.addEventListener("mousemove",(e)=>{
 
 
 /* =========================
-   PARALLAX PROFILE
+   PROFILE PARALLAX
 ========================= */
 
 const profile =
@@ -243,7 +331,7 @@ document.addEventListener("mousemove",(e)=>{
    LOADING EFFECT
 ========================= */
 
-window.addEventListener("load", ()=>{
+window.addEventListener("load",()=>{
 
     document.body.classList.add("loaded");
 
@@ -257,110 +345,64 @@ window.addEventListener("load", ()=>{
 const animatedCards =
 document.querySelectorAll(
 `
-.link-box,
 .slide-card,
-.content-card,
 .youtube-card,
 .minecraft-card,
-.shop-card
+.shop-card,
+.popular-card
 `
 );
 
 animatedCards.forEach((card,index)=>{
 
     card.style.animationDelay =
-    `${index * 0.1}s`;
+    `${index * 0.08}s`;
 
 });
 
 
 /* =========================
-   SEARCH POPUP
+   SHOP PAGINATION EFFECT
 ========================= */
 
-const searchBtn =
-document.querySelector(".nav-btn");
+const shopGrid =
+document.getElementById("shopGrid");
 
-const searchPopup =
-document.querySelector(".search-popup");
+const shopNext =
+document.getElementById("shopNext");
 
-const closeSearch =
-document.querySelector(".close-search");
+const shopPrev =
+document.getElementById("shopPrev");
 
-if(searchBtn && searchPopup){
+if(shopNext){
 
-    searchBtn.addEventListener("click",()=>{
+    shopNext.addEventListener("click",()=>{
 
-        searchPopup.classList.add("active");
+        shopGrid.scrollBy({
 
-    });
+            left:400,
+            behavior:"smooth"
 
-}
-
-if(closeSearch){
-
-    closeSearch.addEventListener("click",()=>{
-
-        searchPopup.classList.remove("active");
+        });
 
     });
 
 }
 
+if(shopPrev){
 
-/* =========================
-   MOBILE MENU
-========================= */
+    shopPrev.addEventListener("click",()=>{
 
-const menuBtn =
-document.querySelectorAll(".nav-btn")[1];
+        shopGrid.scrollBy({
 
-const mobileMenu =
-document.querySelector(".mobile-menu");
+            left:-400,
+            behavior:"smooth"
 
-const closeMenu =
-document.querySelector(".close-menu");
-
-if(menuBtn && mobileMenu){
-
-    menuBtn.addEventListener("click",()=>{
-
-        mobileMenu.classList.add("active");
+        });
 
     });
 
 }
-
-if(closeMenu){
-
-    closeMenu.addEventListener("click",()=>{
-
-        mobileMenu.classList.remove("active");
-
-    });
-
-}
-
-
-/* =========================
-   ESC CLOSE
-========================= */
-
-document.addEventListener("keydown",(e)=>{
-
-    if(e.key === "Escape"){
-
-        if(searchPopup){
-            searchPopup.classList.remove("active");
-        }
-
-        if(mobileMenu){
-            mobileMenu.classList.remove("active");
-        }
-
-    }
-
-});
 
 
 /* =========================
@@ -377,10 +419,10 @@ style.innerHTML = `
     position:absolute;
     width:20px;
     height:20px;
-    background:rgba(255,255,255,0.5);
+    background:rgba(255,255,255,.45);
     border-radius:50%;
     transform:translate(-50%,-50%);
-    animation:rippleEffect 0.7s linear;
+    animation:rippleEffect .7s linear;
     pointer-events:none;
 
 }
@@ -388,15 +430,19 @@ style.innerHTML = `
 @keyframes rippleEffect{
 
     from{
+
         width:0;
         height:0;
         opacity:1;
+
     }
 
     to{
+
         width:500px;
         height:500px;
         opacity:0;
+
     }
 
 }
@@ -405,8 +451,7 @@ style.innerHTML = `
 
     opacity:0;
     transform:translateY(40px);
-    transition:
-    all 1s ease;
+    transition:all 1s ease;
 
 }
 
